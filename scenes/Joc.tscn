@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmcfy70phbtiq"]
+[gd_scene load_steps=10 format=3 uid="uid://dmcfy70phbtiq"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_5lrpa"]
 [ext_resource type="Texture2D" uid="uid://denw2qiptjupw" path="res://sprites/characters/slime.png" id="2_73lxd"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://xj4uve8x7cjs" path="res://sprites/particles/dust_particles_01.png" id="4_gbb5c"]
 [ext_resource type="Texture2D" uid="uid://cuxke0hgmqnwc" path="res://sprites/tilesets/fences.png" id="5_3ly3i"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="6_texdh"]
-[ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="7_wrepp"]
 [ext_resource type="Texture2D" uid="uid://nxmheocryk5x" path="res://sprites/tilesets/walls/walls.png" id="8_nstqq"]
 [ext_resource type="Texture2D" uid="uid://drxx7gf255i7f" path="res://sprites/tilesets/walls/wooden_door.png" id="9_62scl"]
 [ext_resource type="Texture2D" uid="uid://ctlu5gant8716" path="res://sprites/tilesets/walls/wooden_door_b.png" id="10_ljvg0"]
@@ -42,11 +41,6 @@ texture = ExtResource("5_3ly3i")
 texture_filter = 1
 position = Vector2(455, 328)
 texture = ExtResource("6_texdh")
-
-[node name="Plains" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(371, 387)
-texture = ExtResource("7_wrepp")
 
 [node name="Walls" type="Sprite2D" parent="."]
 texture_filter = 1
