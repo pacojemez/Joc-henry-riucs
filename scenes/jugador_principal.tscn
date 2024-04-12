@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://opeli7m0jmlu"]
+
+[ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Jugador_Principal" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(135, 223)
+texture = ExtResource("1_3mwqv")
