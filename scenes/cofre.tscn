@@ -42,4 +42,4 @@ animations = [{
 
 [node name="Animació cofre" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mjh6o")
-frame_progress = 0.228177
+frame_progress = 0.681159
