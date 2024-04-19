@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl1njqs33o5ja"]
+[gd_scene load_steps=5 format=3 uid="uid://bl1njqs33o5ja"]
 
 [ext_resource type="Texture2D" uid="uid://fc6tudnwib1t" path="res://sprites/tilesets/TileSetWalls.png" id="1_jcwod"]
 
@@ -486,9 +486,19 @@ terrain_set_0/terrain_1/name = "Terres"
 terrain_set_0/terrain_1/color = Color(0.776471, 0.0745098, 0.486275, 1)
 sources/0 = SubResource("TileSetAtlasSource_88fb0")
 
+[sub_resource type="TileSet" id="TileSet_yewxg"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Gespa"
+terrain_set_0/terrain_0/color = Color(0.0901961, 0.729412, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapParets" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_bjdxm")
 format = 2
-layer_0/tile_data = PackedInt32Array(458764, 196608, 9, 524300, 458752, 3, 589836, 458752, 3, 655372, 458752, 3, 720908, 458752, 3, 786444, 196608, 11, 458763, 65536, 9, 524299, 327680, 7, 589835, 327680, 7, 655371, 458752, 7, 720907, 458752, 7, 786443, 65536, 11)
+layer_0/tile_data = PackedInt32Array(393224, 327680, 9, 393223, 196608, 7, 458759, 327680, 7, 524295, 65536, 7, 524296, 327680, 9, 589832, 458752, 1, 589831, 65536, 11, 458760, 327680, 9, 393225, 327680, 9, 458761, 327680, 9, 524297, 327680, 9, 589833, 458752, 1, 589834, 196608, 1, 589835, 196608, 11, 524299, 196608, 3, 458763, 327680, 3, 393227, 458752, 3, 393226, 327680, 9, 458762, 327680, 9, 524298, 327680, 9, 327691, 196608, 3, 327688, 327680, 9, 327689, 327680, 9, 327690, 327680, 9, 262154, 327680, 5, 262155, 196608, 9, 327687, 327680, 7, 262151, 65536, 9, 262152, 65536, 5, 262153, 327680, 5)
+
+[node name="TileMapGespa" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_yewxg")
+format = 2
+layer_0/tile_data = PackedInt32Array(393229, 65536, 1, 458765, 65536, 2, 458766, 131072, 2, 393230, 131072, 1, 262157, 65536, 0, 327693, 65536, 1, 327694, 131072, 1, 262158, 131072, 1, 262159, 131072, 1, 262160, 131072, 1, 327696, 131072, 1, 393232, 131072, 1, 458768, 196608, 2, 458767, 131072, 2, 393231, 131072, 1, 327695, 131072, 1, 196622, 65536, 0, 196623, 131072, 0, 196624, 196608, 0, 262161, 196608, 0, 327697, 196608, 1, 393233, 196608, 2)

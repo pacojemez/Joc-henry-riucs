@@ -209,5 +209,5 @@ animations = [{
 
 [node name="Animació slime" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3b0dd")
-animation = &"destroy"
-frame_progress = 0.0526884
+animation = &"sad"
+frame_progress = 0.718232
