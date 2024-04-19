@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+@export var pedra : PackedScene
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
@@ -8,12 +8,15 @@ const JUMP_VELOCITY = -100.0
 
 
 func _physics_process(delta):
-	# Handle jump.
+	movement(delta)
+	if Input.is_action_just_pressed("attack"):
+		shoot_pedra()
+		$TextEdit.text = str(position)
+func movement(delta):
+		# Handle jump.
 	if Input.is_action_pressed("pujar"):
 		velocity.y = - SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	if Input.is_action_pressed("baixar"):
+	elif Input.is_action_pressed("baixar"):
 		velocity.y = SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
@@ -24,5 +27,11 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()
+
+func shoot_pedra():
+	var mouse_pos = get_global_mouse_position()
+	var pedra = pedra.instantiate()
+	add_sibling(pedra)
+	pedra.set_global_position($throwing.global_position)
+	
