@@ -1,6 +1,7 @@
-[gd_scene load_steps=56 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=57 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
+[ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prlvr"]
 atlas = ExtResource("1_3mwqv")
@@ -433,6 +434,7 @@ animations = [{
 }]
 
 [node name="Jugador principal" type="CharacterBody2D"]
+script = ExtResource("1_h868m")
 
 [node name="Animació jugador principal" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n3p1t")
