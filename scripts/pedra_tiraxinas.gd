@@ -10,3 +10,5 @@ const JUMP_VELOCITY = -400.0
 func _physics_process(delta):
 	velocity.x = SPEED
 	move_and_slide()
+	if velocity.x == 0:
+		visible = false
