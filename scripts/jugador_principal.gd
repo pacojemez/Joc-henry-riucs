@@ -51,4 +51,16 @@ func animations():
 		animacio.play("run_up")
 	if velocity.y > 0:
 		animacio.play("run_down")
+	if velocity.y > 0 and velocity.x < 0:
+		animacio.play("run_side")
+		animacio.flip_h = true
+	if velocity.y > 0 and velocity.x > 0:
+		animacio.play("run_side")
+		animacio.flip_h = false
+	if velocity.y < 0 and velocity.x > 0:
+		animacio.play("run_side")
+		animacio.flip_h = false
+	if velocity.y < 0 and velocity.x < 0:
+		animacio.play("run_side")
+		animacio.flip_h = true
 	pass
