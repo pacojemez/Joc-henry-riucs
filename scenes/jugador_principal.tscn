@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
-[ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="2_nnu6r"]
+[ext_resource type="PackedScene" path="res://scenes/pedra_tiraxinas.tscn" id="2_nnu6r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcceh"]
 atlas = ExtResource("1_3mwqv")
@@ -424,8 +424,7 @@ pedra = ExtResource("2_nnu6r")
 
 [node name="Animació jugador principal" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n3p1t")
-animation = &"run_side"
-frame_progress = 0.879095
+animation = &"idle_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_f4g1v")

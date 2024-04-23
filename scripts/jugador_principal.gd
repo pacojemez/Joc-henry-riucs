@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @export var pedra : PackedScene
-
+@onready var animacio = $"Animació jugador principal"
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
 
@@ -8,10 +8,12 @@ const JUMP_VELOCITY = -100.0
 
 
 func _physics_process(delta):
+	
 	movement(delta)
 	if Input.is_action_just_pressed("attack"):
 		shoot_pedra()
 		$TextEdit.text = str(position)
+	animations()
 func movement(delta):
 		# Handle jump.
 	if Input.is_action_pressed("pujar"):
@@ -35,3 +37,18 @@ func shoot_pedra():
 	add_sibling(pedra)
 	pedra.set_global_position($throwing.global_position)
 	
+func animations():
+	if velocity.x > 0:
+		animacio.play("run_side")
+		animacio.flip_h = false
+		
+	if velocity.x < 0:
+		animacio.play("run_side")
+		animacio.flip_h = true
+	if velocity.x == 0:
+		animacio.play("idle_side")
+	if velocity.y < 0:
+		animacio.play("run_up")
+	if velocity.y > 0:
+		animacio.play("run_down")
+	pass
