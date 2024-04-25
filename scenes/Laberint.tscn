@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2q71aaihykec"]
+
+[ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_55egh")]
+position = Vector2(255, 238)
