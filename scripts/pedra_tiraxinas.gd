@@ -11,4 +11,4 @@ func _physics_process(delta):
 	velocity.x = SPEED
 	move_and_slide()
 	if velocity.x == 0:
-		visible = false
+		queue_free()

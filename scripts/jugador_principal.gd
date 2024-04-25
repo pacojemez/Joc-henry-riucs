@@ -12,7 +12,6 @@ func _physics_process(delta):
 	movement(delta)
 	if Input.is_action_just_pressed("attack"):
 		shoot_pedra()
-		$TextEdit.text = str(position)
 	animations()
 func movement(delta):
 		# Handle jump.

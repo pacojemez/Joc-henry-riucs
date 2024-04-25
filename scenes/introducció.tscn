@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://civtmx4jt5830"]
+[gd_scene load_steps=20 format=3 uid="uid://civtmx4jt5830"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_x7txq"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="2_voaeb"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://gpv6qn6k5yth" path="res://sprites/leafs and food/Food.png" id="8_j6f3a"]
 [ext_resource type="Script" path="res://scripts/AreaFulles.gd" id="9_jhrt2"]
 [ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/forat/forat.png" id="9_t7c63"]
+[ext_resource type="PackedScene" uid="uid://cug3hvqjlct6w" path="res://scenes/Apple.tscn" id="11_6ok0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wer1"]
 texture = ExtResource("1_x7txq")
@@ -427,5 +428,14 @@ texture = ExtResource("9_t7c63")
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
 position = Vector2(40, 53)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("11_6ok0j")]
+position = Vector2(198, 83)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("11_6ok0j")]
+position = Vector2(294, 131)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("11_6ok0j")]
+position = Vector2(467, 140)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
