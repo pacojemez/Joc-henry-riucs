@@ -1,37 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw3pxjqvoawd1"]
+[gd_scene load_steps=10 format=3 uid="uid://bw3pxjqvoawd1"]
 
 [ext_resource type="Texture2D" uid="uid://ktjfopb2ka52" path="res://sprites/objects/chest_01.png" id="1_6snuv"]
+[ext_resource type="Script" path="res://scripts/cofre.gd" id="1_y0nu6"]
 
-[sub_resource type="GDScript" id="GDScript_iq8lj"]
-script/source = "extends CharacterBody2D
-
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
-
-
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogjiy"]
+size = Vector2(14, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fu301"]
 atlas = ExtResource("1_6snuv")
@@ -69,9 +42,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gg5ia"]
+radius = 20.0
+
 [node name="Cofre" type="CharacterBody2D"]
-script = SubResource("GDScript_iq8lj")
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_y0nu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_ogjiy")
 
 [node name="Animació cofre" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mjh6o")
 frame_progress = 0.681159
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gg5ia")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = -18.0
+offset_top = -22.0
+offset_right = 122.0
+offset_bottom = 20.0
+scale = Vector2(0.25, 0.25)
+text = "Press E to open"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
