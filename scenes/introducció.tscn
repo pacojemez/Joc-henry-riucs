@@ -406,12 +406,6 @@ texture = ExtResource("6_mh67y")
 stream = ExtResource("7_cgwk5")
 autoplay = true
 
-[node name="Food" type="Sprite2D" parent="."]
-position = Vector2(675, 141)
-texture = ExtResource("8_j6f3a")
-region_enabled = true
-region_rect = Rect2(65.6247, 16.3784, 14.2378, 15.4047)
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("9_jhrt2")
 
@@ -429,13 +423,21 @@ texture = ExtResource("9_t7c63")
 [node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
 position = Vector2(40, 53)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("11_6ok0j")]
+[node name="Pomis" type="Node2D" parent="."]
+
+[node name="Food" type="Sprite2D" parent="Pomis"]
+position = Vector2(675, 141)
+texture = ExtResource("8_j6f3a")
+region_enabled = true
+region_rect = Rect2(65.6247, 16.3784, 14.2378, 15.4047)
+
+[node name="CharacterBody2D" parent="Pomis" instance=ExtResource("11_6ok0j")]
 position = Vector2(198, 83)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("11_6ok0j")]
+[node name="CharacterBody2D2" parent="Pomis" instance=ExtResource("11_6ok0j")]
 position = Vector2(294, 131)
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("11_6ok0j")]
+[node name="CharacterBody2D3" parent="Pomis" instance=ExtResource("11_6ok0j")]
 position = Vector2(467, 140)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

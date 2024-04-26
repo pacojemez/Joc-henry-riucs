@@ -19,3 +19,9 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	i= 1 # Replace with function body.
 	$TextEdit.visible = true
+	
+
+
+func _on_area_2d_body_exited(body):
+	i= 0 # Replace with function body.
+	$TextEdit.visible = false # Replace with function body.

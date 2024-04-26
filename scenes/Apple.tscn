@@ -37,3 +37,4 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
