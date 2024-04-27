@@ -1,7 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c276qayw6bbum"]
 
-[ext_resource type="Script" path="res://scripts/pedra_tiraxinas.gd" id="1_j3fwj"]
 [ext_resource type="Texture2D" uid="uid://2735yfypyr1d" path="res://sprites/characters/pedra_tiraxinas.png" id="2_uckhe"]
+
+[sub_resource type="GDScript" id="GDScript_aroo1"]
+script/source = "extends CharacterBody2D
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+
+
+func _physics_process(delta):
+	move_and_slide()
+	$PedraTiraxinas.look_at(position + velocity)
+	if velocity.x == 0:
+		queue_free()
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8flt"]
 radius = 37.0
@@ -9,13 +21,18 @@ height = 98.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
-script = ExtResource("1_j3fwj")
+script = SubResource("GDScript_aroo1")
 
 [node name="PedraTiraxinas" type="Sprite2D" parent="."]
 position = Vector2(-2, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_uckhe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="PedraTiraxinas"]
+position = Vector2(1.90735e-06, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PedraTiraxinas/Area2D"]
+position = Vector2(20, 0)
 rotation = 1.5708
+scale = Vector2(10, 10)
 shape = SubResource("CapsuleShape2D_y8flt")

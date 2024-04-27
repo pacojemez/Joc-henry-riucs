@@ -28,14 +28,16 @@ func movement(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	velocity.normalized()
 	move_and_slide()
 
 func shoot_pedra():
 	var mouse_pos = get_global_mouse_position()
 	var pedra = pedra.instantiate()
 	add_sibling(pedra)
-	pedra.set_global_position($throwing.global_position)
-	
+	$"."/pivot.look_at(mouse_pos)
+	pedra.set_global_position($"."/pivot/throwing.global_position)
+	pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
 func animations():
 	if velocity.x > 0:
 		animacio.play("run_side")
@@ -44,7 +46,7 @@ func animations():
 	if velocity.x < 0:
 		animacio.play("run_side")
 		animacio.flip_h = true
-	if velocity.x == 0:
+	if velocity.x == 0 and velocity.y == 0:
 		animacio.play("idle_side")
 	if velocity.y < 0:
 		animacio.play("run_up")
