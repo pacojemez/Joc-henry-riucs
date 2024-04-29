@@ -439,6 +439,8 @@ _data = {
 }
 
 [node name="Jugador principal" type="CharacterBody2D"]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_h868m")
 pedra = ExtResource("2_nnu6r")
 
