@@ -270,8 +270,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_twjpt")
+}, {
+"duration": 1.0,
+"texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 3.0
 }, {
@@ -446,7 +449,7 @@ pedra = ExtResource("2_nnu6r")
 
 [node name="Animació jugador principal" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n3p1t")
-animation = &"attack_down"
+animation = &"die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_f4g1v")

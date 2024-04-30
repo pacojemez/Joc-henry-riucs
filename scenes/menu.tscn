@@ -27,6 +27,7 @@ offset_top = 500.0
 offset_right = 660.0
 offset_bottom = 591.0
 text = "START"
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 326)

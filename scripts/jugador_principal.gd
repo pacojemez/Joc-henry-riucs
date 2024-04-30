@@ -3,18 +3,18 @@ extends CharacterBody2D
 @onready var animacio = $"Animació jugador principal"
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
+var vida = 100
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 
 
 func _physics_process(delta):
-	
 	movement(delta)
 	if Input.is_action_just_pressed("attack"):
 		shoot_pedra()
 	animations()
+
 func movement(delta):
-		# Handle jump.
+	
 	if Input.is_action_pressed("pujar"):
 		velocity.y = - SPEED
 	elif Input.is_action_pressed("baixar"):
@@ -39,28 +39,32 @@ func shoot_pedra():
 	pedra.set_global_position($"."/pivot/throwing.global_position)
 	pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
 func animations():
-	if velocity.x > 0:
-		animacio.play("run_side")
-		animacio.flip_h = false
-		
-	if velocity.x < 0:
-		animacio.play("run_side")
-		animacio.flip_h = true
-	if velocity.x == 0 and velocity.y == 0:
-		animacio.play("idle_side")
-	if velocity.y < 0:
-		animacio.play("run_up")
-	if velocity.y > 0:
-		animacio.play("run_down")
-	if velocity.y > 0 and velocity.x < 0:
-		animacio.play("run_side")
-		animacio.flip_h = true
-	if velocity.y > 0 and velocity.x > 0:
-		animacio.play("run_side")
-		animacio.flip_h = false
-	if velocity.y < 0 and velocity.x > 0:
-		animacio.play("run_side")
-		animacio.flip_h = false
-	if velocity.y < 0 and velocity.x < 0:
-		animacio.play("run_side")
-		animacio.flip_h = true
+	if vida > 0:
+		if velocity.x > 0:
+			animacio.play("run_side")
+			animacio.flip_h = false
+		if velocity.x < 0:
+			animacio.play("run_side")
+			animacio.flip_h = true
+		if velocity.x == 0 and velocity.y == 0:
+			animacio.play("idle_side")
+		if velocity.y < 0:
+			animacio.play("run_up")
+		if velocity.y > 0:
+			animacio.play("run_down")
+		if velocity.y > 0 and velocity.x < 0:
+			animacio.play("run_side")
+			animacio.flip_h = true
+		if velocity.y > 0 and velocity.x > 0:
+			animacio.play("run_side")
+			animacio.flip_h = false
+		if velocity.y < 0 and velocity.x > 0:
+			animacio.play("run_side")
+			animacio.flip_h = false
+		if velocity.y < 0 and velocity.x < 0:
+			animacio.play("run_side")
+			animacio.flip_h = true
+	if vida == 0:
+		animacio.play("die")
+		if animacio.frame == 3:
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
