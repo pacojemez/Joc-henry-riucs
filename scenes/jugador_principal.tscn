@@ -1,8 +1,9 @@
-[gd_scene load_steps=59 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=60 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
 [ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="2_nnu6r"]
+[ext_resource type="Texture2D" uid="uid://j4kikn7j2glq" path="res://sprites/objects/heart.png" id="4_xtjco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcceh"]
 atlas = ExtResource("1_3mwqv")
@@ -449,14 +450,35 @@ pedra = ExtResource("2_nnu6r")
 
 [node name="Animació jugador principal" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n3p1t")
-animation = &"die"
+animation = &"idle_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_f4g1v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)
-position_smoothing_enabled = true
+
+[node name="Node2D" type="Node2D" parent="Camera2D"]
+
+[node name="Heart" type="Sprite2D" parent="Camera2D/Node2D"]
+position = Vector2(86, -44)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xtjco")
+
+[node name="Heart2" type="Sprite2D" parent="Camera2D/Node2D"]
+position = Vector2(78, -44)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xtjco")
+
+[node name="Heart3" type="Sprite2D" parent="Camera2D/Node2D"]
+position = Vector2(70, -44)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xtjco")
+
+[node name="Heart4" type="Sprite2D" parent="Camera2D/Node2D"]
+position = Vector2(62, -44)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xtjco")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

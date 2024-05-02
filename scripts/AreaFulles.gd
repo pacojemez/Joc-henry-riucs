@@ -20,6 +20,7 @@ func _on_body_entered(body):
 		$"../Jugador principal"/AnimationPlayer.play("encongir")
 		$fulles.visible =	false
 		$"Forat".visible = true
+		$"../Jugador principal"/Camera2D/Node2D.visible = false
 		i = 1
 		
 	 

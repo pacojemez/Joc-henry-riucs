@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animacio = $"Animació jugador principal"
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
-var vida = 100
+var vida = 4
 
 
 
@@ -68,3 +68,19 @@ func animations():
 		animacio.play("die")
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	if vida == 4:
+		pass
+	if vida == 3: 
+		$Camera2D/Node2D/Heart4.visible = false
+	if vida == 2: 
+		$Camera2D/Node2D/Heart4.visible = false
+		$Camera2D/Node2D/Heart3.visible = false
+	if vida == 1: 
+		$Camera2D/Node2D/Heart4.visible = false
+		$Camera2D/Node2D/Heart3.visible = false
+		$Camera2D/Node2D/Heart2.visible = false
+	if vida == 0: 
+		$Camera2D/Node2D/Heart4.visible = false
+		$Camera2D/Node2D/Heart3.visible = false
+		$Camera2D/Node2D/Heart2.visible = false
+		$Camera2D/Node2D/Heart.visible = false
