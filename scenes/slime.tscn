@@ -120,8 +120,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1o5p4")
+}, {
+"duration": 1.0,
+"texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"destroy",
 "speed": 5.0
 }, {
@@ -214,11 +217,13 @@ radius = 7.0
 height = 14.0
 
 [node name="Slime" type="CharacterBody2D"]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_4k2ka")
 
 [node name="Animació slime" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3b0dd")
-animation = &"idle"
+animation = &"destroy"
 
 [node name="Area2D" type="Area2D" parent="."]
 
