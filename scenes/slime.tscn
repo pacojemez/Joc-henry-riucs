@@ -218,8 +218,7 @@ script = ExtResource("1_4k2ka")
 
 [node name="Animació slime" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3b0dd")
-animation = &"sad"
-frame_progress = 0.293058
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 
