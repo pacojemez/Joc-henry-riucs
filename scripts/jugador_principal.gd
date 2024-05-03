@@ -48,9 +48,12 @@ func animations():
 			animacio.flip_h = true
 		if velocity.x == 0 and velocity.y == 0:
 			animacio.play("idle_side")
-		if velocity.y < 0:
+		if velocity.y < 0 and velocity.x == 0:
 			animacio.play("run_up")
-		if velocity.y > 0:
+			$CharacterBody2D.visible = true
+		else:
+			$CharacterBody2D.visible = false
+		if velocity.y > 0 and velocity.x == 0:
 			animacio.play("run_down")
 		if velocity.y > 0 and velocity.x < 0:
 			animacio.play("run_side")
