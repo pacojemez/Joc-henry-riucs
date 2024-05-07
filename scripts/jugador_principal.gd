@@ -4,12 +4,15 @@ extends CharacterBody2D
 var has_torch = false
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
+var rocks = 2
 var vida = 4
-
+var cooldown = 0
 
 
 func _physics_process(delta):
 	movement(delta)
+	if cooldown > 0:
+		cooldown -= delta
 	if Input.is_action_just_pressed("attack"):
 		shoot_pedra()
 	animations()
@@ -35,10 +38,16 @@ func movement(delta):
 func shoot_pedra():
 	var mouse_pos = get_global_mouse_position()
 	var pedra = pedra.instantiate()
-	add_sibling(pedra)
-	$"."/pivot.look_at(mouse_pos)
-	pedra.set_global_position($"."/pivot/throwing.global_position)
-	pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
+	if cooldown <= 0 and rocks > 0:
+		add_sibling(pedra)
+		$"."/pivot.look_at(mouse_pos)
+		pedra.set_global_position($"."/pivot/throwing.global_position)
+		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
+		cooldown = 1
+		rocks -= 1
+		$Control/Label.visible = false
+	if rocks == 0:
+		$Control/Label.visible = true
 func animations():
 	if vida > 0:
 		if velocity.x > 0:
@@ -74,19 +83,17 @@ func animations():
 		animacio.play("die")
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-	if vida == 4:
-		pass
 	if vida == 3: 
-		$Camera2D/Node2D/Heart4.visible = false
+		$Control/HBoxContainer/Heart4.visible = false
 	if vida == 2: 
-		$Camera2D/Node2D/Heart4.visible = false
-		$Camera2D/Node2D/Heart3.visible = false
+		$Control/HBoxContainer/Heart4.visible = false
+		$Control/HBoxContainer/Heart3.visible = false
 	if vida == 1: 
-		$Camera2D/Node2D/Heart4.visible = false
-		$Camera2D/Node2D/Heart3.visible = false
-		$Camera2D/Node2D/Heart2.visible = false
+		$Control/HBoxContainer/Heart4.visible = false
+		$Control/HBoxContainer/Heart3.visible = false
+		$Control/HBoxContainer/Heart2.visible = false
 	if vida == 0: 
-		$Camera2D/Node2D/Heart4.visible = false
-		$Camera2D/Node2D/Heart3.visible = false
-		$Camera2D/Node2D/Heart2.visible = false
-		$Camera2D/Node2D/Heart.visible = false
+		$Control/HBoxContainer/Heart4.visible = false
+		$Control/HBoxContainer/Heart3.visible = false
+		$Control/HBoxContainer/Heart2.visible = false
+		$Control/HBoxContainer/Heart1.visible = false
