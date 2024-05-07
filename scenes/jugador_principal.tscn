@@ -462,26 +462,6 @@ zoom = Vector2(6, 6)
 
 [node name="Node2D" type="Node2D" parent="Camera2D"]
 
-[node name="Heart" type="Sprite2D" parent="Camera2D/Node2D"]
-position = Vector2(86, -44)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xtjco")
-
-[node name="Heart2" type="Sprite2D" parent="Camera2D/Node2D"]
-position = Vector2(78, -44)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xtjco")
-
-[node name="Heart3" type="Sprite2D" parent="Camera2D/Node2D"]
-position = Vector2(70, -44)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xtjco")
-
-[node name="Heart4" type="Sprite2D" parent="Camera2D/Node2D"]
-position = Vector2(62, -44)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xtjco")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7o24n")
@@ -497,3 +477,43 @@ visible = false
 position = Vector2(1, -4.76837e-08)
 rotation = 0.359538
 scale = Vector2(0.4, 0.4)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -96.0
+offset_top = -54.0
+offset_right = 96.0
+offset_bottom = 54.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 5.0
+offset_right = 132.0
+offset_bottom = 45.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
+
+[node name="Heart1" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_xtjco")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_xtjco")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_xtjco")
+expand_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_xtjco")
+expand_mode = 2

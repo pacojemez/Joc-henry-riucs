@@ -16,11 +16,12 @@ func _physics_process(delta):
 		if cofre_a.frame ==2:
 			is_open = true
 			$Sprite2D.visible = true
-	if $Sprite2D.visible == true:
+	if is_open == true:
+		$AnimationPlayer.play
+		$TextEdit.text = str($Antorcha.scale)
 		cofre_a.play("stop")
 func _on_area_2d_body_entered(body):
 	i= 1 # Replace with function body.
-	
 	$TextEdit.visible = true
 func _on_area_2d_body_exited(body):
 	i= 0 # Replace with function body.
