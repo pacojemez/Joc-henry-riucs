@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://x507ibky6jot"]
+[gd_scene load_steps=8 format=3 uid="uid://x507ibky6jot"]
 
 [ext_resource type="Texture2D" uid="uid://dh3olcotaxu1s" path="res://sprites/assets terra i parets/Set 1.png" id="1_odsx6"]
+[ext_resource type="Texture2D" uid="uid://do3hlxqmkx2ru" path="res://sprites/assets terra i parets/Set 1.1.png" id="2_3o8hf"]
+[ext_resource type="Texture2D" uid="uid://ckvt614winra5" path="res://sprites/assets terra i parets/Set 1.2.png" id="3_5b4pf"]
+[ext_resource type="Texture2D" uid="uid://b8rdk8edqodoa" path="res://sprites/assets terra i parets/Set 1.3.png" id="4_gujak"]
+[ext_resource type="Texture2D" uid="uid://ts7padojrtjh" path="res://sprites/assets terra i parets/Structure.png" id="5_l5hot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45b6w"]
 texture = ExtResource("1_odsx6")
@@ -268,3 +272,23 @@ sources/0 = SubResource("TileSetAtlasSource_45b6w")
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_wfekd")
 format = 2
+
+[node name="Set1_1" type="Sprite2D" parent="."]
+position = Vector2(112, 168)
+texture = ExtResource("2_3o8hf")
+
+[node name="Set1_2" type="Sprite2D" parent="."]
+position = Vector2(368, 120)
+texture = ExtResource("3_5b4pf")
+
+[node name="Set1_3" type="Sprite2D" parent="."]
+position = Vector2(152, 24)
+texture = ExtResource("4_gujak")
+
+[node name="Set1" type="Sprite2D" parent="."]
+position = Vector2(744, 56)
+texture = ExtResource("1_odsx6")
+
+[node name="Structure" type="Sprite2D" parent="."]
+position = Vector2(416, 168)
+texture = ExtResource("5_l5hot")

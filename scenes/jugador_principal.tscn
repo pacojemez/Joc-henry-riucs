@@ -444,6 +444,7 @@ _data = {
 }
 
 [node name="Jugador principal" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_h868m")

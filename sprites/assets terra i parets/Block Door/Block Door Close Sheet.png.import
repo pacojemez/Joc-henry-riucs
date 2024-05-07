@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6pbcwe5j6jju"
-path="res://.godot/imported/dungeon0001.png-413475dd20ab4610010811150acf0d9d.ctex"
+uid="uid://dtepc25x0o4md"
+path="res://.godot/imported/Block Door Close Sheet.png-e2e23ae0942b6dfe7e7ba0fb5e98774f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ignorar, tests roger/decoracion/dungeon0001.png"
-dest_files=["res://.godot/imported/dungeon0001.png-413475dd20ab4610010811150acf0d9d.ctex"]
+source_file="res://sprites/assets terra i parets/Block Door/Block Door Close Sheet.png"
+dest_files=["res://.godot/imported/Block Door Close Sheet.png-e2e23ae0942b6dfe7e7ba0fb5e98774f.ctex"]
 
 [params]
 
