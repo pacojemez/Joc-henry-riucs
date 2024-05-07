@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2q71aaihykec"]
+[gd_scene load_steps=9 format=3 uid="uid://c2q71aaihykec"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_v1ex3"]
 [ext_resource type="PackedScene" uid="uid://opeli7m0jmlu" path="res://scenes/jugador_principal.tscn" id="3_vexgt"]
 [ext_resource type="PackedScene" uid="uid://bw3pxjqvoawd1" path="res://scenes/cofre.tscn" id="4_7crpf"]
 [ext_resource type="PackedScene" uid="uid://caq00ix5eowfi" path="res://scenes/slime.tscn" id="5_o07mi"]
+[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="6_tec74"]
 
 [sub_resource type="Gradient" id="Gradient_s738l"]
 offsets = PackedFloat32Array(0.0519481, 0.668831)
@@ -43,3 +44,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="Slime" parent="." instance=ExtResource("5_o07mi")]
 position = Vector2(155, 300)
+
+[node name="MenuJoc" parent="." instance=ExtResource("6_tec74")]

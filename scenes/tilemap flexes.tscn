@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgvj44o2omdtr"]
 
-[ext_resource type="Texture2D" uid="uid://dh3olcotaxu1s" path="res://sprites/assets terra i parets/Set 1.png" id="1_po0nl"]
+[ext_resource type="Texture2D" uid="uid://dh3olcotaxu1s" path="res://sprites/assets terra i parets/Set 1.png" id="1_1u60a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45b6w"]
-texture = ExtResource("1_po0nl")
+texture = ExtResource("1_1u60a")
 29:2/0 = 0
 30:2/0 = 0
 31:2/0 = 0
@@ -271,4 +271,4 @@ format = 2
 
 [node name="Set1" type="Sprite2D" parent="."]
 position = Vector2(408, 128)
-texture = ExtResource("1_po0nl")
+texture = ExtResource("1_1u60a")

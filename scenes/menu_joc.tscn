@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bquctiabq407y"]
+
+[ext_resource type="Script" path="res://scripts/MenuJoc.gd" id="1_5r5qq"]
+[ext_resource type="Texture2D" uid="uid://cmclyclhasw6t" path="res://sprites/sprites menu/Game paused.png" id="2_cl88n"]
+
+[node name="MenuJoc" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_5r5qq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GamePaused" type="Sprite2D" parent="."]
+position = Vector2(613, 63)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("2_cl88n")
+
+[node name="GamePaused2" type="Sprite2D" parent="."]
+position = Vector2(613, 63)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("2_cl88n")
+
+[node name="Surt" type="Button" parent="."]
+offset_left = 656.0
+offset_top = 440.0
+offset_right = 840.0
+offset_bottom = 532.0
+scale = Vector2(2, 2)
+text = "EXIT"
+
+[node name="Continua" type="Button" parent="."]
+offset_left = 162.0
+offset_top = 440.0
+offset_right = 346.0
+offset_bottom = 532.0
+scale = Vector2(2, 2)
+text = "CONTINUE"
+
+[connection signal="pressed" from="Surt" to="." method="_on_surt_pressed"]
+[connection signal="pressed" from="Continua" to="." method="_on_continua_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://civtmx4jt5830"]
+[gd_scene load_steps=28 format=3 uid="uid://civtmx4jt5830"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_x7txq"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="2_voaeb"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cug3hvqjlct6w" path="res://scenes/Apple.tscn" id="11_6ok0j"]
 [ext_resource type="Texture2D" uid="uid://cldaq43iacl8t" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/House1.png" id="12_dm8ga"]
 [ext_resource type="Texture2D" uid="uid://dcwm283tavnjx" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Well.png" id="15_afit5"]
+[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt2uo"]
 texture = ExtResource("2_voaeb")
@@ -724,5 +725,7 @@ position = Vector2(-166, 10)
 [node name="Well" type="Sprite2D" parent="."]
 position = Vector2(-320, 124)
 texture = ExtResource("15_afit5")
+
+[node name="MenuJoc" parent="." instance=ExtResource("16_qk3w3")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
