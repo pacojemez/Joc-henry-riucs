@@ -77,20 +77,16 @@ func animations():
 	if vida == 4:
 		pass
 	if vida == 3: 
-		$Control/HBoxContainer/Heart4.visible = false
+		$Camera2D/Node2D/Heart4.visible = false
 	if vida == 2: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
+		$Camera2D/Node2D/Heart4.visible = false
+		$Camera2D/Node2D/Heart3.visible = false
 	if vida == 1: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
+		$Camera2D/Node2D/Heart4.visible = false
+		$Camera2D/Node2D/Heart3.visible = false
+		$Camera2D/Node2D/Heart2.visible = false
 	if vida == 0: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
-		$Control/HBoxContainer/Heart1.visible = false
-
-func abrir_cofre():
-	if $"../Cofre_antorxa".is_open == true:
-		pass
+		$Camera2D/Node2D/Heart4.visible = false
+		$Camera2D/Node2D/Heart3.visible = false
+		$Camera2D/Node2D/Heart2.visible = false
+		$Camera2D/Node2D/Heart.visible = false
