@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @export var pedra : PackedScene
 @onready var animacio = $"Animació jugador principal"
+var has_torch = false
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
 var vida = 4
@@ -67,6 +68,8 @@ func animations():
 		if velocity.y < 0 and velocity.x < 0:
 			animacio.play("run_side")
 			animacio.flip_h = true
+	if has_torch == true:
+		$CharacterBody2D.visible = true
 	if vida == 0:
 		animacio.play("die")
 		if animacio.frame == 3:
