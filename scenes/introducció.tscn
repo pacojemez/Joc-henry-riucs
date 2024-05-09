@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dwrsywoh0jsdn" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/House2.png" id="6_gcck5"]
 [ext_resource type="Texture2D" uid="uid://dwel5gvbq73qg" path="res://sprites/leafs and food/textures-dead-leaf-texture-set-01-2-removebg-preview.png" id="6_mh67y"]
 [ext_resource type="Texture2D" uid="uid://ddpo6m1th0slw" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Fence_Vertical.png" id="7_0u0k1"]
-[ext_resource type="AudioStream" uid="uid://b8l2eeur0qnmn" path="res://sons/musica_intro.mp3" id="7_cgwk5"]
+[ext_resource type="AudioStream" uid="uid://pl1klevu8g7j" path="res://sons/musica_intro.mp3" id="7_cgwk5"]
 [ext_resource type="Texture2D" uid="uid://gpv6qn6k5yth" path="res://sprites/leafs and food/Food.png" id="8_j6f3a"]
 [ext_resource type="Script" path="res://scripts/AreaFulles.gd" id="9_jhrt2"]
 [ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/forat/forat.png" id="9_t7c63"]

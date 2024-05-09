@@ -34,7 +34,6 @@ func movement(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	velocity.normalized()
 	move_and_slide()
-
 func shoot_pedra():
 	var mouse_pos = get_global_mouse_position()
 	var pedra = pedra.instantiate()
