@@ -3,8 +3,6 @@ extends CharacterBody2D
 @onready var animacio_zorro = $AnimatedSprite2D
 
 func _physics_process(delta):
-
-	velocity.y =-100
 	if velocity.x > 0:
 			animacio_zorro.play("walk")
 			animacio_zorro.flip_h = false
