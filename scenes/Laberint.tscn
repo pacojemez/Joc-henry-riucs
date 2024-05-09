@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://72leb4swsoin"]
+[gd_scene load_steps=31 format=3 uid="uid://72leb4swsoin"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_v1ex3"]
-[ext_resource type="Script" path="res://scripts/cofre.gd" id="3_oi3et"]
+[ext_resource type="Script" path="res://scripts/Cofre_antorcha.gd" id="3_bs8hy"]
 [ext_resource type="PackedScene" uid="uid://opeli7m0jmlu" path="res://scenes/jugador_principal.tscn" id="3_vexgt"]
 [ext_resource type="PackedScene" uid="uid://bw3pxjqvoawd1" path="res://scenes/cofre.tscn" id="4_7crpf"]
 [ext_resource type="Texture2D" uid="uid://ktjfopb2ka52" path="res://sprites/objects/chest_01.png" id="4_nx1qv"]
 [ext_resource type="PackedScene" uid="uid://caq00ix5eowfi" path="res://scenes/slime.tscn" id="5_o07mi"]
+[ext_resource type="Texture2D" uid="uid://c0goewslhko1o" path="res://sprites/objects/Torch Animated.png" id="5_tcd5y"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="6_tec74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogjiy"]
@@ -63,6 +64,102 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ivxt"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3r5y"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vebf"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t22j"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6f0s"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrmm4"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8ev4"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttsee"]
+atlas = ExtResource("5_tcd5y")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms3py"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ivxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3r5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vebf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t22j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6f0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrmm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8ev4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttsee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_4mr6r"]
+resource_name = "torch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.5, 0), Vector2(0, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xskvk"]
+_data = {
+"torch": SubResource("Animation_4mr6r")
+}
+
 [sub_resource type="Gradient" id="Gradient_s738l"]
 offsets = PackedFloat32Array(0.0519481, 0.668831)
 colors = PackedColorArray(0.703808, 0.703808, 0.703808, 1, 0, 0, 0, 1)
@@ -84,7 +181,7 @@ layer_0/tile_data = PackedInt32Array(131075, 1179648, 13, 196611, 1441792, 15, 2
 position = Vector2(234, 208)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("3_oi3et")
+script = ExtResource("3_bs8hy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cofre_antorcha"]
 position = Vector2(0, -4.5)
@@ -124,6 +221,18 @@ region_rect = Rect2(1, 1, 14, 8)
 
 [node name="Animació cofre" type="AnimatedSprite2D" parent="Cofre_antorcha"]
 sprite_frames = SubResource("SpriteFrames_mjh6o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cofre_antorcha"]
+position = Vector2(-0.5, 0)
+scale = Vector2(1e-05, 1e-05)
+sprite_frames = SubResource("SpriteFrames_ms3py")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cofre_antorcha"]
+libraries = {
+"": SubResource("AnimationLibrary_xskvk")
+}
+speed_scale = 2.5
 
 [node name="Cofre2" parent="." instance=ExtResource("4_7crpf")]
 position = Vector2(314, 221)
