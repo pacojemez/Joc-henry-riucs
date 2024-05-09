@@ -419,9 +419,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4g1v"]
-radius = 7.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h0hl"]
+size = Vector2(10, 18)
 
 [sub_resource type="Animation" id="Animation_lef45"]
 resource_name = "encongir"
@@ -455,7 +454,8 @@ sprite_frames = SubResource("SpriteFrames_n3p1t")
 animation = &"idle_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_f4g1v")
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4h0hl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)

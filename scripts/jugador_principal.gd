@@ -34,7 +34,6 @@ func movement(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	velocity.normalized()
 	move_and_slide()
-
 func shoot_pedra():
 	var mouse_pos = get_global_mouse_position()
 	var pedra = pedra.instantiate()
@@ -77,12 +76,10 @@ func animations():
 		if velocity.y < 0 and velocity.x < 0:
 			animacio.play("run_side")
 			animacio.flip_h = true
-	if has_torch == true:
-		$CharacterBody2D.visible = true
-	if vida == 0:
-		animacio.play("die")
-		if animacio.frame == 3:
-			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		if has_torch == true:
+			$CharacterBody2D.visible = true
+		else:
+			$CharacterBody2D.visible = false
 	if vida == 3: 
 		$Control/HBoxContainer/Heart4.visible = false
 	if vida == 2: 
@@ -93,7 +90,7 @@ func animations():
 		$Control/HBoxContainer/Heart3.visible = false
 		$Control/HBoxContainer/Heart2.visible = false
 	if vida == 0: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
-		$Control/HBoxContainer/Heart1.visible = false
+		$Control/HBoxContainer.visible = false
+		animacio.play("die")
+		if animacio.frame == 3:
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")	
