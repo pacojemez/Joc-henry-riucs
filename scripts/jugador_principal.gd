@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -100.0
 var rocks = 2
 var vida = 4
 var cooldown = 0
-
+var has_key = true
 
 func _physics_process(delta):
 	movement(delta)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cyobyi4bebld5"]
+[gd_scene load_steps=17 format=3 uid="uid://cyobyi4bebld5"]
 
 [ext_resource type="Texture2D" uid="uid://dtepc25x0o4md" path="res://sprites/assets terra i parets/Block Door/Block Door Close Sheet.png" id="1_2h045"]
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="2_ijvsd"]
-[ext_resource type="Script" path="res://scenes/AnimatedSprite2D.gd" id="3_n6rpw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyhm4"]
 atlas = ExtResource("1_2h045")
@@ -111,7 +110,6 @@ sprite_frames = SubResource("SpriteFrames_o6cca")
 animation = &"Porta tancant"
 frame = 5
 frame_progress = 1.0
-script = ExtResource("3_n6rpw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x5lub")
