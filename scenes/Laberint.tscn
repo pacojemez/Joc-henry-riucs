@@ -163,15 +163,6 @@ _data = {
 "torch": SubResource("Animation_4mr6r")
 }
 
-[sub_resource type="Gradient" id="Gradient_s738l"]
-offsets = PackedFloat32Array(0.0519481, 0.668831)
-colors = PackedColorArray(0.703808, 0.703808, 0.703808, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_17kym"]
-gradient = SubResource("Gradient_s738l")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyhm4"]
 atlas = ExtResource("10_fvxj1")
 region = Rect2(0, 0, 32, 16)
@@ -265,7 +256,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yq68i")
 }],
 "loop": false,
-"name": &"pota obrint",
+"name": &"porta obrint",
 "speed": 7.0
 }]
 
@@ -274,6 +265,15 @@ size = Vector2(32, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qeaby"]
 size = Vector2(17, 11)
+
+[sub_resource type="Gradient" id="Gradient_s738l"]
+offsets = PackedFloat32Array(0.0519481, 0.668831)
+colors = PackedColorArray(0.703808, 0.703808, 0.703808, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_17kym"]
+gradient = SubResource("Gradient_s738l")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -343,15 +343,6 @@ speed_scale = 2.5
 [node name="Cofre2" parent="." instance=ExtResource("4_7crpf")]
 position = Vector2(314, 221)
 
-[node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
-position = Vector2(58, 295)
-scale = Vector2(1, 0.857143)
-
-[node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
-scale = Vector2(0.7, 0.7)
-texture = SubResource("GradientTexture2D_17kym")
-texture_scale = 2.0
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 position = Vector2(0, 1)
@@ -368,9 +359,7 @@ position = Vector2(352, 24)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="porta"]
 sprite_frames = SubResource("SpriteFrames_o6cca")
-animation = &"Porta tancant"
-frame = 5
-frame_progress = 1.0
+animation = &"porta obrint"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porta"]
 position = Vector2(0, -5.5)
@@ -384,5 +373,22 @@ script = ExtResource("12_kentr")
 position = Vector2(-39.5, 19)
 shape = SubResource("RectangleShape2D_qeaby")
 
+[node name="Label" type="Label" parent="porta/Area2D"]
+offset_left = -14.0
+offset_top = 10.5
+offset_right = 26.0
+offset_bottom = 33.5
+text = "hola "
+
+[node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
+position = Vector2(336, 101)
+scale = Vector2(1, 0.857143)
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
+scale = Vector2(0.7, 0.7)
+texture = SubResource("GradientTexture2D_17kym")
+texture_scale = 2.0
+
 [connection signal="body_entered" from="Cofre_antorcha/Area2D" to="Cofre_antorcha" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Cofre_antorcha/Area2D" to="Cofre_antorcha" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="porta/Area2D" to="porta/Area2D" method="_on_body_entered"]

@@ -96,12 +96,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_yq68i")
 }],
 "loop": false,
-"name": &"pota obrint",
+"name": &"porta obrint",
 "speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5lub"]
-size = Vector2(32, 16)
+size = Vector2(32, 5)
 
 [node name="porta" type="StaticBody2D"]
 
