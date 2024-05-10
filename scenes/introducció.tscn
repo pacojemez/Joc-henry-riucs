@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://civtmx4jt5830"]
+[gd_scene load_steps=29 format=3 uid="uid://civtmx4jt5830"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_x7txq"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="2_voaeb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/forat/forat.png" id="9_t7c63"]
 [ext_resource type="PackedScene" uid="uid://cug3hvqjlct6w" path="res://scenes/Apple.tscn" id="11_6ok0j"]
 [ext_resource type="Texture2D" uid="uid://cldaq43iacl8t" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/House1.png" id="12_dm8ga"]
+[ext_resource type="AudioStream" uid="uid://lmodof60uiek" path="res://sons/crit.mp3" id="12_lo7op"]
 [ext_resource type="Texture2D" uid="uid://dcwm283tavnjx" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Well.png" id="15_afit5"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
 
@@ -674,12 +675,18 @@ visible = false
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_mrpjq")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="musica_intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cgwk5")
+volume_db = -20.056
+autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(621, 143)
 script = ExtResource("9_jhrt2")
+
+[node name="crit" type="AudioStreamPlayer2D" parent="Area2D"]
+position = Vector2(-621, -143)
+stream = ExtResource("12_lo7op")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0mdsr")

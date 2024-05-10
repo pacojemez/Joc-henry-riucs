@@ -39,6 +39,7 @@ func shoot_pedra():
 	var pedra = pedra.instantiate()
 	if cooldown <= 0 and rocks > 0:
 		add_sibling(pedra)
+		$sonido_tirachinas.play()
 		$"."/pivot.look_at(mouse_pos)
 		pedra.set_global_position($"."/pivot/throwing.global_position)
 		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
@@ -49,37 +50,51 @@ func shoot_pedra():
 		$Control/Label.visible = true
 func animations():
 	if vida > 0:
+		if velocity.x != 0 or velocity.y != 0:
+			$pasos_intro.play()
 		if velocity.x > 0:
 			animacio.play("run_side")
 			animacio.flip_h = false
+			$pasos_intro.play()
 		if velocity.x < 0:
 			animacio.play("run_side")
 			animacio.flip_h = true
+			$pasos_intro.play()
 		if velocity.x == 0 and velocity.y == 0:
 			animacio.play("idle_side")
 		if velocity.y < 0 and velocity.x == 0:
 			animacio.play("run_up")
 			$CharacterBody2D.visible = true
+			$pasos_intro.play()
 		else:
 			$CharacterBody2D.visible = false
+			$pasos_intro.play()
 		if velocity.y > 0 and velocity.x == 0:
 			animacio.play("run_down")
+			$pasos_intro.play()
 		if velocity.y > 0 and velocity.x < 0:
 			animacio.play("run_side")
+			$pasos_intro.play()
 			animacio.flip_h = true
 		if velocity.y > 0 and velocity.x > 0:
 			animacio.play("run_side")
+			$pasos_intro.play()
 			animacio.flip_h = false
 		if velocity.y < 0 and velocity.x > 0:
 			animacio.play("run_side")
+			$pasos_intro.play()
 			animacio.flip_h = false
 		if velocity.y < 0 and velocity.x < 0:
 			animacio.play("run_side")
+			$pasos_intro.play()
 			animacio.flip_h = true
 	if has_torch == true:
 		$CharacterBody2D.visible = true
+	else:
+		$CharacterBody2D.visible = false
 	if vida == 0:
 		animacio.play("die")
+		$derrota.play()
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	if vida == 3: 

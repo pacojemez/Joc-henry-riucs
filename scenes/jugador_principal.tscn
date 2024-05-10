@@ -1,10 +1,13 @@
-[gd_scene load_steps=61 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=64 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
 [ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="2_nnu6r"]
 [ext_resource type="PackedScene" uid="uid://m7khujqsa6fc" path="res://scenes/antorcha.tscn" id="3_x3swk"]
 [ext_resource type="Texture2D" uid="uid://j4kikn7j2glq" path="res://sprites/objects/heart.png" id="4_xtjco"]
+[ext_resource type="AudioStream" uid="uid://cardeerigc5kj" path="res://sons/sonido_tirachinas.mp3" id="6_qdw3v"]
+[ext_resource type="AudioStream" uid="uid://dasdvdtubkjgb" path="res://sons/pasos_introduccio.mp3" id="7_7r7l3"]
+[ext_resource type="AudioStream" uid="uid://c05ygfy1srh6s" path="res://sons/derrota.mp3" id="8_5mkye"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcceh"]
 atlas = ExtResource("1_3mwqv")
@@ -519,3 +522,14 @@ offset_right = 104.0
 offset_bottom = -1.0
 scale = Vector2(0.3, 0.3)
 text = "You don't have rocks!"
+
+[node name="sonido_tirachinas" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qdw3v")
+
+[node name="pasos_intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7r7l3")
+volume_db = 15.705
+
+[node name="derrota" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_5mkye")
+volume_db = 15.928

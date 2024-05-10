@@ -16,6 +16,7 @@ func _process(delta):
 	if temps == 55:
 		get_tree().change_scene_to_file("res://scenes/Laberint.tscn")
 func _on_body_entered(body):
+	$crit.play()
 	if body == $"../Jugador principal":
 		$"../Jugador principal"/AnimationPlayer.play("encongir")
 		$fulles.visible =	false

@@ -12,11 +12,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="GamePaused" type="Sprite2D" parent="."]
-position = Vector2(613, 63)
-scale = Vector2(1.69, 1.69)
-texture = ExtResource("2_cl88n")
+metadata/_edit_use_anchors_ = true
 
 [node name="GamePaused2" type="Sprite2D" parent="."]
 position = Vector2(613, 63)
@@ -30,6 +26,7 @@ offset_right = 840.0
 offset_bottom = 532.0
 scale = Vector2(2, 2)
 text = "EXIT"
+metadata/_edit_use_anchors_ = true
 
 [node name="Continua" type="Button" parent="."]
 offset_left = 162.0
@@ -38,6 +35,7 @@ offset_right = 346.0
 offset_bottom = 532.0
 scale = Vector2(2, 2)
 text = "CONTINUE"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Surt" to="." method="_on_surt_pressed"]
 [connection signal="pressed" from="Continua" to="." method="_on_continua_pressed"]

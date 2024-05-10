@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ktjfopb2ka52" path="res://sprites/objects/chest_01.png" id="4_nx1qv"]
 [ext_resource type="PackedScene" uid="uid://caq00ix5eowfi" path="res://scenes/slime.tscn" id="5_o07mi"]
 [ext_resource type="Texture2D" uid="uid://c0goewslhko1o" path="res://sprites/objects/Torch Animated.png" id="5_tcd5y"]
-[ext_resource type="PackedScene" path="res://scenes/menu_joc.tscn" id="6_tec74"]
+[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="6_tec74"]
 [ext_resource type="Texture2D" uid="uid://dtepc25x0o4md" path="res://sprites/assets terra i parets/Block Door/Block Door Close Sheet.png" id="10_fvxj1"]
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="11_q5dv5"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="12_kentr"]
