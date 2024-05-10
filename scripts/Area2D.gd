@@ -13,6 +13,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == $"../../Jugador principal":
-		if $"../../Jugador principal".has_key == true                                                          == true:
+		if $"../../Jugador principal".has_key == true:
 			$"../AnimatedSprite2D".play("porta obrint")
-			$"../CollisionShape2D".disabled = true
+			$"../CollisionShape2D".queue_free()
+			$".".queue_free()
+			$Label.text = "h"

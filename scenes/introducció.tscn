@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cldaq43iacl8t" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/House1.png" id="12_dm8ga"]
 [ext_resource type="AudioStream" uid="uid://lmodof60uiek" path="res://sons/crit.mp3" id="12_lo7op"]
 [ext_resource type="Texture2D" uid="uid://dcwm283tavnjx" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Well.png" id="15_afit5"]
-[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
+[ext_resource type="PackedScene" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt2uo"]
 texture = ExtResource("2_voaeb")
