@@ -16,9 +16,9 @@ func _physics_process(delta):
 			$TextEdit.visible = true
 			$AnimationPlayer.play("torch")
 			if Input.is_action_just_pressed("e"):
+				$AnimatedSprite2D.visible = false
 				$TextEdit.visible = false
 				$"../Jugador principal".has_torch = true
-				$AnimationPlayer.play_backwards("torch")
 	if $Sprite2D.visible == true:
 		cofre_a.play("stop")
 func _on_area_2d_body_entered(body):

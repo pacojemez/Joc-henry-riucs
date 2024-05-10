@@ -11,12 +11,12 @@
 [ext_resource type="AudioStream" uid="uid://pl1klevu8g7j" path="res://sons/musica_intro.mp3" id="7_cgwk5"]
 [ext_resource type="Texture2D" uid="uid://gpv6qn6k5yth" path="res://sprites/leafs and food/Food.png" id="8_j6f3a"]
 [ext_resource type="Script" path="res://scripts/AreaFulles.gd" id="9_jhrt2"]
-[ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/forat/forat.png" id="9_t7c63"]
+[ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/assets terra i parets/forat/forat.png" id="9_t7c63"]
 [ext_resource type="PackedScene" uid="uid://cug3hvqjlct6w" path="res://scenes/Apple.tscn" id="11_6ok0j"]
 [ext_resource type="Texture2D" uid="uid://cldaq43iacl8t" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/House1.png" id="12_dm8ga"]
 [ext_resource type="AudioStream" uid="uid://lmodof60uiek" path="res://sons/crit.mp3" id="12_lo7op"]
 [ext_resource type="Texture2D" uid="uid://dcwm283tavnjx" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Well.png" id="15_afit5"]
-[ext_resource type="PackedScene" uid="uid://k3d1q7hisyud" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
+[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt2uo"]
 texture = ExtResource("2_voaeb")

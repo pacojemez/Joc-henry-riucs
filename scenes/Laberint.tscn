@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://72leb4swsoin"]
+[gd_scene load_steps=65 format=3 uid="uid://72leb4swsoin"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_v1ex3"]
@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://ktjfopb2ka52" path="res://sprites/objects/chest_01.png" id="4_nx1qv"]
 [ext_resource type="PackedScene" uid="uid://caq00ix5eowfi" path="res://scenes/slime.tscn" id="5_o07mi"]
 [ext_resource type="Texture2D" uid="uid://c0goewslhko1o" path="res://sprites/objects/Torch Animated.png" id="5_tcd5y"]
-[ext_resource type="PackedScene" uid="uid://k3d1q7hisyud" path="res://scenes/menu_joc.tscn" id="6_tec74"]
+[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="6_tec74"]
 [ext_resource type="Texture2D" uid="uid://dtepc25x0o4md" path="res://sprites/assets terra i parets/Block Door/Block Door Close Sheet.png" id="10_fvxj1"]
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="11_q5dv5"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="12_kentr"]
+[ext_resource type="Texture2D" uid="uid://b6lw33tygbodu" path="res://sprites/Pixel Art Key Pack - Animated/Key 2/Key 2 - SILVER - Spritesheet.png" id="13_ylm1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogjiy"]
 size = Vector2(14, 5)
@@ -275,6 +276,130 @@ gradient = SubResource("Gradient_s738l")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymsf3"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(0, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6t67"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(10, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd04b"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(20, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tst04"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(30, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qud4x"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(40, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkive"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(50, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgo22"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(60, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra4gr"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(70, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlhlx"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(80, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jt3o"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(90, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emeb7"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(100, 0, 10, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjx15"]
+atlas = ExtResource("13_ylm1e")
+region = Rect2(110, 0, 10, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i6cr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymsf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6t67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd04b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tst04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qud4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkive")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgo22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra4gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlhlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jt3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emeb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjx15")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_7u85d"]
+resource_name = "grow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(314, 218), Vector2(314, 216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eo1d6"]
+_data = {
+"grow": SubResource("Animation_7u85d")
+}
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(186, 305)
 
@@ -341,9 +466,6 @@ libraries = {
 }
 speed_scale = 2.5
 
-[node name="Cofre2" parent="." instance=ExtResource("4_7crpf")]
-position = Vector2(314, 221)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 position = Vector2(0, 1)
@@ -379,7 +501,7 @@ offset_bottom = 46.5
 scale = Vector2(0.2, 0.2)
 
 [node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
-position = Vector2(336, 101)
+position = Vector2(50, 299)
 scale = Vector2(1, 0.857143)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
@@ -389,6 +511,23 @@ texture_scale = 2.0
 
 [node name="MenuJoc" parent="Jugador principal" instance=ExtResource("6_tec74")]
 visible = false
+
+[node name="cofre_key" type="Node2D" parent="."]
+
+[node name="Cofre_key" parent="cofre_key" instance=ExtResource("4_7crpf")]
+position = Vector2(314, 221)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cofre_key"]
+position = Vector2(314, 216)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_0i6cr")
+frame_progress = 0.811849
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cofre_key"]
+libraries = {
+"": SubResource("AnimationLibrary_eo1d6")
+}
 
 [connection signal="body_entered" from="Cofre_antorcha/Area2D" to="Cofre_antorcha" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Cofre_antorcha/Area2D" to="Cofre_antorcha" method="_on_area_2d_body_exited"]
