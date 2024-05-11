@@ -83,7 +83,6 @@ func animations():
 		$CharacterBody2D.visible = false
 	if vida == 0:
 		animacio.play("die")
-		$killed.play()
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	if vida == 3: 
