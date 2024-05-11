@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://72leb4swsoin"]
+[gd_scene load_steps=67 format=3 uid="uid://72leb4swsoin"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_v1ex3"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="11_q5dv5"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="12_kentr"]
 [ext_resource type="Texture2D" uid="uid://b6lw33tygbodu" path="res://sprites/Pixel Art Key Pack - Animated/Key 2/Key 2 - SILVER - Spritesheet.png" id="13_ylm1e"]
+[ext_resource type="AudioStream" uid="uid://s7f5aairswu3" path="res://sons/musica_laberint.mp3" id="14_11tig"]
+[ext_resource type="Script" path="res://scripts/musica_laberint.gd" id="15_vhnyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogjiy"]
 size = Vector2(14, 5)
@@ -529,7 +531,13 @@ libraries = {
 "": SubResource("AnimationLibrary_eo1d6")
 }
 
+[node name="musica_laberint" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_11tig")
+autoplay = true
+script = ExtResource("15_vhnyr")
+
 [connection signal="body_entered" from="Cofre_antorcha/Area2D" to="Cofre_antorcha" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Cofre_antorcha/Area2D" to="Cofre_antorcha" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="porta/Area2D" to="porta/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="porta/Area2D" to="porta/Area2D" method="_on_body_exited"]
+[connection signal="finished" from="musica_laberint" to="musica_laberint" method="_on_finished"]

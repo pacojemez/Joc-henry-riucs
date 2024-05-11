@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://civtmx4jt5830"]
+[gd_scene load_steps=30 format=3 uid="uid://civtmx4jt5830"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_x7txq"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="2_voaeb"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ddpo6m1th0slw" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Fence_Vertical.png" id="7_0u0k1"]
 [ext_resource type="AudioStream" uid="uid://pl1klevu8g7j" path="res://sons/musica_intro.mp3" id="7_cgwk5"]
 [ext_resource type="Texture2D" uid="uid://gpv6qn6k5yth" path="res://sprites/leafs and food/Food.png" id="8_j6f3a"]
+[ext_resource type="Script" path="res://scripts/musica_intro.gd" id="9_5hvay"]
 [ext_resource type="Script" path="res://scripts/AreaFulles.gd" id="9_jhrt2"]
 [ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/assets terra i parets/forat/forat.png" id="9_t7c63"]
 [ext_resource type="PackedScene" uid="uid://cug3hvqjlct6w" path="res://scenes/Apple.tscn" id="11_6ok0j"]
@@ -679,6 +680,7 @@ shape = SubResource("RectangleShape2D_mrpjq")
 stream = ExtResource("7_cgwk5")
 volume_db = -20.056
 autoplay = true
+script = ExtResource("9_5hvay")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(621, 143)
@@ -736,4 +738,5 @@ texture = ExtResource("15_afit5")
 
 [node name="MenuJoc" parent="." instance=ExtResource("16_qk3w3")]
 
+[connection signal="finished" from="musica_intro" to="musica_intro" method="_on_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
