@@ -16,7 +16,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		shoot_pedra()
 	animations()
-
+	if rocks == 0:
+		$Control/Label.visible = true
+	else:
+		$Control/Label.visible = false
 func movement(delta):
 	
 	if Input.is_action_pressed("pujar"):
@@ -39,15 +42,11 @@ func shoot_pedra():
 	var pedra = pedra.instantiate()
 	if cooldown <= 0 and rocks > 0:
 		add_sibling(pedra)
-		$sonido_tirachinas.play()
 		$"."/pivot.look_at(mouse_pos)
 		pedra.set_global_position($"."/pivot/throwing.global_position)
 		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
 		cooldown = 1
 		rocks -= 1
-		$Control/Label.visible = false
-	if rocks == 0:
-		$Control/Label.visible = true
 func animations():
 	if vida > 0:
 		if velocity.x > 0:

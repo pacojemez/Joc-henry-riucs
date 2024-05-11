@@ -12,36 +12,34 @@ var character_in = false
 func _physics_process(delta):
 	move_and_slide()
 	$PedraTiraxinas.look_at(position + velocity)
-	if stopped ==true:
+	if stopped == true:
 		velocity = Vector2(0,0)
 		if character_in == true:
 			$Label.visible = true
 			if Input.is_action_just_pressed(\"e\"):
-				$\"Jugador principal\".rocks+=1
+				$\"../Jugador principal\".rocks+=1
 				queue_free()
-		
-
 func _on_area_2d_body_entered(body):
 	if body == $\"../Slime\":
 		$\"../Slime\"/\"Animació slime\".play(\"destroy\")
 		$\"../Slime\".is_dead = true
 		queue_free() # Replace with function body.
 	if body == $\"../tilemap paret\":
-		stopped =true
-
-func _on_area_2d_2_body_exited(body):
-	if body == $\"Jugador principal\":
-		character_in = false
-		$Label.visible = false # Replace with function body.
-
-
+		stopped = true
 func _on_area_2d_body_exited(body):
 	pass # Replace with function body.
 
 
 func _on_area_2_dpickup_body_entered(body):
-	if body == $\"Jugador principal\":
+	if body == $\"..\"/\"Jugador principal\":
 		character_in = true # Replace with function body.
+		if stopped == true:
+			$Label.visible = true
+		
+func _on_area_2_dpickup_body_exited(body):
+	if body == $\"..\"/\"Jugador principal\":
+		character_in = false
+		$Label.visible = false
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8flt"]
@@ -52,7 +50,8 @@ height = 98.0
 radius = 1400.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(0.05, 0.05)
+position = Vector2(576, 374)
+scale = Vector2(0.1, 0.1)
 collision_layer = 8
 collision_mask = 8
 script = SubResource("GDScript_aroo1")
@@ -62,29 +61,31 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_uckhe")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.1, 0.1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
-scale = Vector2(10, 10)
 shape = SubResource("CapsuleShape2D_y8flt")
 
 [node name="Area2Dpickup" type="Area2D" parent="."]
 position = Vector2(-2, 0)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dpickup"]
 position = Vector2(20, 0)
+scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_5rurf")
 
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = -40.0
-offset_top = -80.0
-offset_right = 15.0
-offset_bottom = -57.0
+offset_left = -79.9999
+offset_top = -130.0
+offset_right = -24.9999
+offset_bottom = -107.0
+scale = Vector2(3, 3)
 text = "press E"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Area2Dpickup" to="." method="_on_area_2_dpickup_body_entered"]
+[connection signal="body_exited" from="Area2Dpickup" to="." method="_on_area_2_dpickup_body_exited"]
