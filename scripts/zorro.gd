@@ -1,30 +1,41 @@
 extends CharacterBody2D
 
 @onready var animacio_zorro = $AnimatedSprite2D
+var position_actual : Vector2
+var position_antiga : Vector2
+var velocitat : Vector2
 
 func _physics_process(delta):
-	if velocity.x > 0:
+	if not position_actual == global_position:
+		position_antiga = position_actual
+	position_actual = global_position
+	velocitat = position_actual - position_antiga
+	if velocitat.x > 0:
 			animacio_zorro.play("walk")
 			animacio_zorro.flip_h = false
-	if velocity.x < 0:
+	if velocitat.x < 0:
 			animacio_zorro.play("walk")
 			animacio_zorro.flip_h = true
-	if velocity.x == 0 and velocity.y == 0:
+	if velocitat.x == 0 and velocitat.y == 0:
 			animacio_zorro.play("idle")
-	if velocity.y < 0 and velocity.x == 0:
+	if velocitat.y < 0 and abs(velocitat.x) < 10:
 		animacio_zorro.play("walk_up")
-	#if velocity.y > 0 and velocity.x == 0:
-		#animacio_zorro.play("run_down")
-	if velocity.y > 0 and velocity.x < 0:
+	if velocity.y > 0 and abs(velocitat.x) < 10:
+		animacio_zorro.play("run_down")
+	if velocitat.y > 0 and velocitat.x < 10:
 		animacio_zorro.play("walk")
 		animacio_zorro.flip_h = true
-	if velocity.y > 0 and velocity.x > 0:
+	if velocitat.y > 0 and velocitat.x > 10:
 			animacio_zorro.play("walk")
 			animacio_zorro.flip_h = false
-	if velocity.y < 0 and velocity.x > 0:
+	if velocitat.y < 0 and velocitat.x > 10:
 		animacio_zorro.play("walk")
 		animacio_zorro.flip_h = false
-	if velocity.y < 0 and velocity.x < 0:
+	if velocitat.y < 0 and velocitat.x < 10:
 		animacio_zorro.play("walk")
 		animacio_zorro.flip_h = true
-	move_and_slide()
+func abs(num):
+	if num >= 0:
+		return num
+	if num < 0:
+		return -num
