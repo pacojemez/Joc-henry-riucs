@@ -129,7 +129,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(314, 220), Vector2(314, 218)]
+"values": [Vector2(314, 218), Vector2(314, 218)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -234,14 +234,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_ypbfg"]
-resource_name = "grow"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xskvk"]
-_data = {
-"grow": SubResource("Animation_ypbfg")
-}
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ivxt"]
 atlas = ExtResource("5_tcd5y")
 region = Rect2(0, 0, 64, 64)
@@ -305,6 +297,39 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_x2jbx"]
+resource_name = "grow"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(233, 204), Vector2(233, 200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pout2"]
+_data = {
+"grow": SubResource("Animation_x2jbx")
+}
 
 [sub_resource type="Gradient" id="Gradient_s738l"]
 offsets = PackedFloat32Array(0.0519481, 0.668831)
@@ -370,7 +395,7 @@ libraries = {
 speed_scale = 4.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cofre_key"]
-position = Vector2(314, 220)
+position = Vector2(314, 218)
 rotation = 1.5708
 scale = Vector2(1e-05, 1e-05)
 sprite_frames = SubResource("SpriteFrames_lnw0e")
@@ -380,17 +405,17 @@ sprite_frames = SubResource("SpriteFrames_lnw0e")
 [node name="Cofre" parent="cofre_torch" instance=ExtResource("4_7crpf")]
 position = Vector2(233, 209)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="cofre_torch"]
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_xskvk")
-}
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cofre_torch"]
-position = Vector2(234, 202)
-scale = Vector2(0.3, 0.3)
+position = Vector2(233, 204)
+scale = Vector2(1e-05, 1e-05)
 sprite_frames = SubResource("SpriteFrames_ms3py")
 autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cofre_torch"]
+libraries = {
+"": SubResource("AnimationLibrary_pout2")
+}
+speed_scale = 2.5
 
 [node name="musica_laberint" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_11tig")
@@ -398,7 +423,7 @@ autoplay = true
 script = ExtResource("15_vhnyr")
 
 [node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
-position = Vector2(293, 318)
+position = Vector2(59, 298)
 scale = Vector2(1, 0.857143)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
