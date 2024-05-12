@@ -729,14 +729,14 @@ position = Vector2(467, 140)
 wait_time = 2.34
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
-position = Vector2(-166, 10)
-scale = Vector2(1, 1)
+position = Vector2(514, 153)
 
 [node name="Well" type="Sprite2D" parent="."]
 position = Vector2(-320, 124)
 texture = ExtResource("15_afit5")
 
 [node name="MenuJoc" parent="." instance=ExtResource("16_qk3w3")]
+visible = false
 
 [connection signal="finished" from="musica_intro" to="musica_intro" method="_on_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

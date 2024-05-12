@@ -11,13 +11,14 @@ func _ready():
 func _process(delta):
 	
 	if i == 1:
-		$"../Jugador principal".global_position = $"Forat".global_position
+		$"../Jugador principal".global_position.x = move_toward($"../Jugador principal".global_position.x,$"Forat".global_position.x,1)
+		$"../Jugador principal".global_position.y = move_toward($"../Jugador principal".global_position.y,$"Forat".global_position.y,1)
 		temps += 1
 	if temps == 55:
 		get_tree().change_scene_to_file("res://scenes/Laberint.tscn")
 func _on_body_entered(body):
-	$crit.play()
 	if body == $"../Jugador principal":
+		$crit.play()
 		$"../Jugador principal"/AnimationPlayer.play("encongir")
 		$fulles.visible =	false
 		$"Forat".visible = true

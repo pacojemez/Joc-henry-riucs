@@ -1,5 +1,7 @@
 extends PathFollow2D
-
-var speed = 0.05
+var go = true
+var speed = 0.1
 func _process(delta):
-	progress_ratio += delta* speed
+	if go:
+		progress_ratio += delta* speed
+	

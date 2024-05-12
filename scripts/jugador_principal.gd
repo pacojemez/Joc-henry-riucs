@@ -8,6 +8,8 @@ var rocks = 2
 var vida = 4
 var cooldown = 0
 var has_key = true
+var got_hit = false
+
 
 func _physics_process(delta):
 	movement(delta)
@@ -44,7 +46,7 @@ func shoot_pedra():
 		add_sibling(pedra)
 		$"."/pivot.look_at(mouse_pos)
 		pedra.set_global_position($"."/pivot/throwing.global_position)
-		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*10
+		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*100
 		cooldown = 1
 		rocks -= 1
 func animations():
@@ -80,6 +82,10 @@ func animations():
 		$CharacterBody2D.visible = true
 	else:
 		$CharacterBody2D.visible = false
+	if got_hit:
+		$AnimationPlayer2.play("hit")
+	
+	
 	if vida == 0:
 		animacio.play("die")
 		if animacio.frame == 3:

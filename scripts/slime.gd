@@ -3,11 +3,13 @@ var is_dead = false
 
 	
 func _physics_process(delta):
+	
 	move_and_slide()
 	dead()
 	mirar()
 func _on_area_2d_body_entered(body):
 	if body == $".."/"Jugador principal":
+		$".."/"Jugador principal".got_hit = true
 		$".."/"Jugador principal".vida += -1
 func mirar():
 	if global_position.x > $".."/"Jugador principal".global_position.x:
