@@ -397,7 +397,7 @@ speed_scale = 4.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cofre_key"]
 position = Vector2(314, 218)
 rotation = 1.5708
-scale = Vector2(1e-05, 1e-05)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_lnw0e")
 
 [node name="cofre_torch" type="Node2D" parent="."]

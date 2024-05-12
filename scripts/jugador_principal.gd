@@ -91,16 +91,16 @@ func animations():
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	if vida == 3: 
-		$Control/HBoxContainer/Heart4.visible = false
-	if vida == 2: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-	if vida == 1: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
-	if vida == 0: 
-		$Control/HBoxContainer/Heart4.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
 		$Control/HBoxContainer/Heart1.visible = false
+	if vida == 2: 
+		$Control/HBoxContainer/Heart1.visible = false
+		$Control/HBoxContainer/Heart2.visible = false
+	if vida == 1: 
+		$Control/HBoxContainer/Heart1.visible = false
+		$Control/HBoxContainer/Heart2.visible = false
+		$Control/HBoxContainer/Heart3.visible = false
+	if vida == 0: 
+		$Control/HBoxContainer/Heart1.visible = false
+		$Control/HBoxContainer/Heart2.visible = false
+		$Control/HBoxContainer/Heart3.visible = false
+		$Control/HBoxContainer/Heart4.visible = false
