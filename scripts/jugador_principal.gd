@@ -7,11 +7,15 @@ const JUMP_VELOCITY = -100.0
 var rocks = 2
 var vida = 4
 var cooldown = 0
-var has_key = true
+var has_key = false
 var got_hit = false
-
+var object
 
 func _physics_process(delta):
+	if object == $"../cofre_key":
+		has_key = true
+	if object == $"../cofre_torch":
+		has_torch = true
 	movement(delta)
 	if cooldown > 0:
 		cooldown -= delta
@@ -61,9 +65,11 @@ func animations():
 			animacio.play("idle_side")
 		if velocity.y < 0 and velocity.x == 0:
 			animacio.play("run_up")
-			$CharacterBody2D.visible = true
+			if has_torch:
+				$CharacterBody2D.visible = true
 		else:
-			$CharacterBody2D.visible = false
+			if has_torch:
+				$CharacterBody2D.visible = false
 		if velocity.y > 0 and velocity.x == 0:
 			animacio.play("run_down")
 		if velocity.y > 0 and velocity.x < 0:
@@ -78,10 +84,6 @@ func animations():
 		if velocity.y < 0 and velocity.x < 0:
 			animacio.play("run_side")
 			animacio.flip_h = true
-	if has_torch == true:
-		$CharacterBody2D.visible = true
-	else:
-		$CharacterBody2D.visible = false
 	if got_hit:
 		$AnimationPlayer2.play("hit")
 	
