@@ -389,7 +389,7 @@ scale = Vector2(0.2, 0.2)
 metadata/_edit_use_anchors_ = true
 
 [node name="cofre_key" type="Node2D" parent="."]
-position = Vector2(234, 207)
+position = Vector2(346, 97)
 
 [node name="Cofre_key" parent="cofre_key" instance=ExtResource("4_7crpf")]
 
@@ -406,7 +406,6 @@ libraries = {
 speed_scale = 4.0
 
 [node name="cofre_torch" type="Node2D" parent="."]
-position = Vector2(85, 15)
 
 [node name="Cofre" parent="cofre_torch" instance=ExtResource("4_7crpf")]
 position = Vector2(233, 209)
@@ -429,23 +428,19 @@ autoplay = true
 script = ExtResource("15_vhnyr")
 
 [node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
-<<<<<<< Updated upstream
 position = Vector2(59, 298)
-=======
-position = Vector2(60, 295)
->>>>>>> Stashed changes
 scale = Vector2(1, 0.857143)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
 scale = Vector2(0.7, 0.7)
 texture = SubResource("GradientTexture2D_17kym")
-texture_scale = 4.0
+texture_scale = 2.0
 
 [node name="MenuJoc" parent="Jugador principal" instance=ExtResource("6_tec74")]
 visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(698, 549)
+position = Vector2(698, 552)
 script = ExtResource("14_bvse1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -692,6 +692,11 @@ stream = ExtResource("12_lo7op")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0mdsr")
 
+[node name="fulles" type="Sprite2D" parent="Area2D"]
+texture_filter = 6
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("6_mh67y")
+
 [node name="Forat" type="Sprite2D" parent="Area2D"]
 visible = false
 texture_filter = 1
@@ -699,49 +704,15 @@ position = Vector2(1, 1)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("9_t7c63")
 
-<<<<<<< Updated upstream
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.34
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
 position = Vector2(-75, 51)
 
-=======
-[node name="fulles" type="Sprite2D" parent="Area2D"]
-texture_filter = 6
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("6_mh67y")
-
-[node name="Pomis" type="Node2D" parent="."]
-position = Vector2(9, 5)
-
-[node name="Food" type="Sprite2D" parent="Pomis"]
-position = Vector2(675, 141)
-texture = ExtResource("8_j6f3a")
-region_enabled = true
-region_rect = Rect2(65.6247, 16.3784, 14.2378, 15.4047)
-
-[node name="CharacterBody2D" parent="Pomis" instance=ExtResource("11_6ok0j")]
-position = Vector2(198, 83)
-
-[node name="CharacterBody2D2" parent="Pomis" instance=ExtResource("11_6ok0j")]
-position = Vector2(300, 122)
-collision_layer = 4
-collision_mask = 4
-
-[node name="CharacterBody2D3" parent="Pomis" instance=ExtResource("11_6ok0j")]
-position = Vector2(467, 140)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.34
-
->>>>>>> Stashed changes
 [node name="Well" type="Sprite2D" parent="."]
 position = Vector2(-320, 124)
 texture = ExtResource("15_afit5")
-
-[node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
-position = Vector2(-108, 41)
 
 [node name="MenuJoc" parent="." instance=ExtResource("16_qk3w3")]
 visible = false
