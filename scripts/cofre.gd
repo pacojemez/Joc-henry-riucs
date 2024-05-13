@@ -4,7 +4,6 @@ var opened = 0
 var collectable = false
 @onready var texto = $TextEdit
 @onready var cofre_a := $"Animació cofre"
-@onready var object = $"../AnimatedSprite2D"
 func _physics_process(delta):
 	abrir()
 	if opened == 2 and Input.is_action_just_pressed("e"):

@@ -1,17 +1,19 @@
 extends CharacterBody2D
 @export var pedra : PackedScene
 @onready var animacio = $"Animació jugador principal"
+@onready var anim = $Control/HBoxContainer/AnimatedSprite2D
 var has_torch = false
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
 var rocks = 2
-var vida = 4
+var vida = 5
 var cooldown = 0
 var has_key = false
 var got_hit = false
-var object
-
+var object = Object
 func _physics_process(delta):
+	if Input.is_action_just_pressed("i"):
+		$Control/HBoxContainer.visible = true
 	if object == $"../cofre_key":
 		has_key = true
 	if object == $"../cofre_torch":
@@ -26,6 +28,7 @@ func _physics_process(delta):
 		$Control/Label.visible = true
 	else:
 		$Control/Label.visible = false
+	$Control/HBoxContainer/Sprite2D/Label.text = str(rocks)
 func movement(delta):
 	
 	if Input.is_action_pressed("pujar"):
@@ -55,6 +58,8 @@ func shoot_pedra():
 		cooldown = 1
 		rocks -= 1
 func animations():
+	if has_torch :
+		$PointLight2D.texture_scale = 10
 	if vida > 0:
 		if velocity.x > 0:
 			animacio.play("run_side")
@@ -87,23 +92,12 @@ func animations():
 			animacio.flip_h = true
 	if got_hit:
 		$AnimationPlayer2.play("hit")
-	
+		got_hit = false
 	
 	if vida == 0:
+		anim.frame = 0
 		animacio.play("die")
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-	if vida == 3: 
-		$Control/HBoxContainer/Heart1.visible = false
-	if vida == 2: 
-		$Control/HBoxContainer/Heart1.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
-	if vida == 1: 
-		$Control/HBoxContainer/Heart1.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-	if vida == 0: 
-		$Control/HBoxContainer/Heart1.visible = false
-		$Control/HBoxContainer/Heart2.visible = false
-		$Control/HBoxContainer/Heart3.visible = false
-		$Control/HBoxContainer/Heart4.visible = false
+	else:
+		anim.frame = vida

@@ -9,10 +9,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	if i == 1:
 		$"../Jugador principal".global_position.x = move_toward($"../Jugador principal".global_position.x,$"Forat".global_position.x,1)
 		$"../Jugador principal".global_position.y = move_toward($"../Jugador principal".global_position.y,$"Forat".global_position.y,1)
+		$"../Jugador principal".velocity
+		
 		temps += 1
 	if temps == 55:
 		get_tree().change_scene_to_file("res://scenes/Laberint.tscn")
@@ -20,7 +21,6 @@ func _on_body_entered(body):
 	if body == $"../Jugador principal":
 		$crit.play()
 		$"../Jugador principal"/AnimationPlayer.play("encongir")
-		$fulles.visible =	false
 		$"Forat".visible = true
 		$"../Jugador principal"/Control/HBoxContainer.visible = false
 		i = 1

@@ -57,8 +57,8 @@ collision_mask = 8
 script = SubResource("GDScript_aroo1")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_y8flt")
 
 [node name="PedraTiraxinas" type="Sprite2D" parent="."]
@@ -71,6 +71,7 @@ region_rect = Rect2(144, 207, 26, 27)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_y8flt")
 
@@ -79,6 +80,7 @@ position = Vector2(-2, 0)
 scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dpickup"]
+visible = false
 position = Vector2(20, 0)
 scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_5rurf")
