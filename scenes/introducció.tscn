@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://civtmx4jt5830"]
+[gd_scene load_steps=29 format=3 uid="uid://civtmx4jt5830"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_x7txq"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="2_voaeb"]
@@ -9,13 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://dwel5gvbq73qg" path="res://sprites/leafs and food/textures-dead-leaf-texture-set-01-2-removebg-preview.png" id="6_mh67y"]
 [ext_resource type="Texture2D" uid="uid://ddpo6m1th0slw" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Fence_Vertical.png" id="7_0u0k1"]
 [ext_resource type="AudioStream" uid="uid://pl1klevu8g7j" path="res://sons/musica_intro.mp3" id="7_cgwk5"]
-[ext_resource type="Texture2D" uid="uid://gpv6qn6k5yth" path="res://sprites/leafs and food/Food.png" id="8_j6f3a"]
 [ext_resource type="Script" path="res://scripts/musica_intro.gd" id="9_5hvay"]
 [ext_resource type="Script" path="res://scripts/AreaFulles.gd" id="9_jhrt2"]
 [ext_resource type="Texture2D" uid="uid://c10ai67gm0lka" path="res://sprites/assets terra i parets/forat/forat.png" id="9_t7c63"]
-[ext_resource type="PackedScene" uid="uid://cug3hvqjlct6w" path="res://scenes/Apple.tscn" id="11_6ok0j"]
 [ext_resource type="Texture2D" uid="uid://cldaq43iacl8t" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/House1.png" id="12_dm8ga"]
 [ext_resource type="AudioStream" uid="uid://lmodof60uiek" path="res://sons/crit.mp3" id="12_lo7op"]
+[ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="14_e7jd0"]
 [ext_resource type="Texture2D" uid="uid://dcwm283tavnjx" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Well.png" id="15_afit5"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
 
@@ -706,24 +705,14 @@ scale = Vector2(0.14, 0.14)
 texture = ExtResource("9_t7c63")
 
 [node name="Pomis" type="Node2D" parent="."]
-position = Vector2(9, 5)
 
-[node name="Food" type="Sprite2D" parent="Pomis"]
-position = Vector2(675, 141)
-texture = ExtResource("8_j6f3a")
-region_enabled = true
-region_rect = Rect2(65.6247, 16.3784, 14.2378, 15.4047)
+[node name="CharacterBody2D" parent="Pomis" instance=ExtResource("14_e7jd0")]
+position = Vector2(99, 84)
+scale = Vector2(0.2, 0.2)
 
-[node name="CharacterBody2D" parent="Pomis" instance=ExtResource("11_6ok0j")]
-position = Vector2(198, 83)
-
-[node name="CharacterBody2D2" parent="Pomis" instance=ExtResource("11_6ok0j")]
-position = Vector2(300, 122)
-collision_layer = 4
-collision_mask = 4
-
-[node name="CharacterBody2D3" parent="Pomis" instance=ExtResource("11_6ok0j")]
-position = Vector2(467, 140)
+[node name="CharacterBody2D2" parent="Pomis" instance=ExtResource("14_e7jd0")]
+position = Vector2(290, 118)
+scale = Vector2(0.2, 0.2)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.34
@@ -737,6 +726,9 @@ texture = ExtResource("15_afit5")
 
 [node name="MenuJoc" parent="." instance=ExtResource("16_qk3w3")]
 visible = false
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("14_e7jd0")]
+position = Vector2(753, 458)
 
 [connection signal="finished" from="musica_intro" to="musica_intro" method="_on_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

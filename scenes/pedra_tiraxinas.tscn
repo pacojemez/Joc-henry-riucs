@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c276qayw6bbum"]
 
-[ext_resource type="Texture2D" uid="uid://2735yfypyr1d" path="res://sprites/characters/pedra_tiraxinas.png" id="2_uckhe"]
+[ext_resource type="Texture2D" uid="uid://fl5em5tu5sc" path="res://sprites/objects/pedra.png" id="1_0qo8j"]
 
 [sub_resource type="GDScript" id="GDScript_aroo1"]
 script/source = "extends CharacterBody2D
@@ -43,7 +43,7 @@ func _on_area_2_dpickup_body_exited(body):
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8flt"]
-radius = 37.0
+radius = 40.0
 height = 98.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rurf"]
@@ -57,8 +57,10 @@ collision_mask = 8
 script = SubResource("GDScript_aroo1")
 
 [node name="PedraTiraxinas" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_uckhe")
+scale = Vector2(4, 4)
+texture = ExtResource("1_0qo8j")
+region_enabled = true
+region_rect = Rect2(146, 207, 24, 24)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -72,7 +74,7 @@ scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dpickup"]
 position = Vector2(20, 0)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("CircleShape2D_5rurf")
 
 [node name="Label" type="Label" parent="."]
