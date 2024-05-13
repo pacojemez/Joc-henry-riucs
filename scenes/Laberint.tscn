@@ -428,7 +428,7 @@ autoplay = true
 script = ExtResource("15_vhnyr")
 
 [node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
-position = Vector2(707, 621)
+position = Vector2(59, 298)
 scale = Vector2(1, 0.857143)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]

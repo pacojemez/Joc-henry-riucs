@@ -51,6 +51,7 @@ func shoot_pedra():
 		$"."/pivot.look_at(mouse_pos)
 		pedra.set_global_position($"."/pivot/throwing.global_position)
 		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*100
+		pedra.stopped = false
 		cooldown = 1
 		rocks -= 1
 func animations():
