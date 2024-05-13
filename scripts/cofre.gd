@@ -8,8 +8,9 @@ var collectable = false
 func _physics_process(delta):
 	abrir()
 	if opened == 2 and Input.is_action_just_pressed("e"):
-			$"../AnimatedSprite2D".visible = false
-			texto.visible = false
+		$"../../Jugador principal".object = $".."
+		$"../AnimatedSprite2D".visible = false
+		texto.visible = false
 func _on_area_2d_body_entered(body):
 	ch_in = true 
 	texto.visible = true
