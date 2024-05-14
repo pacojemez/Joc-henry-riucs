@@ -295,6 +295,7 @@ texture = ExtResource("4_dv0v8")
 0:1/0/terrain = 2
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -6.75, 4.5, -4.75, 6.5, 0.375, 5.125, 5.125, 3, 8, -5.125, 5.875, -8, 0.375)
 0:5/0 = 0
 0:5/0/terrain_set = 0
 0:5/0/terrain = 0
@@ -719,17 +720,14 @@ visible = false
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("14_e7jd0")]
 position = Vector2(99, 84)
-rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("14_e7jd0")]
 position = Vector2(681, 145)
-rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("14_e7jd0")]
 position = Vector2(290, 118)
-rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("14_e7jd0")]

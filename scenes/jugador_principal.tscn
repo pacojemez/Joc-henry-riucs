@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=74 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
@@ -527,6 +527,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qbh33"]
+polygon = PackedVector2Array(336.286, -270.623, 334.527, -275.303, 339.207, -277.063, 337.448, -281.743, 342.128, -283.502, 338.609, -292.863, 343.29, -294.622, 336.253, -313.343, 331.573, -311.584, 328.054, -320.945, 323.374, -319.185, 321.615, -323.866, 316.934, -322.106, 315.175, -326.787, 193.488, -281.047, 195.247, -276.367, 190.566, -274.608, 192.326, -269.927, 187.645, -268.168, 190.284, -261.148, 191.164, -258.808, 186.483, -257.048, 192.641, -240.667, 193.52, -238.327, 195.86, -239.207, 198.201, -240.086, 201.719, -230.726, 206.399, -232.485, 208.159, -227.805, 212.839, -229.564, 214.598, -224.884)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_07jbh"]
+polygon = PackedVector2Array(-8, 6, -8, 8, -10, 8, -10, 10, -12, 10, -12, 12, -10, 12, -10, 14, -8, 14, -8, 16, 52, 16, 52, 14, 54, 14, 54, 12, 56, 12, 56, 10, 54, 10, 54, 8, 52, 8, 52, 6)
+
 [node name="Jugador principal" type="CharacterBody2D"]
 collision_layer = 7
 collision_mask = 7
@@ -610,6 +616,17 @@ offset_right = 35.0
 offset_bottom = 20.0
 scale = Vector2(0.3, 0.3)
 text = "1"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Control/HBoxContainer"]
+position = Vector2(-115, 100)
+rotation = 0.359538
+scale = Vector2(0.4, 0.4)
+occluder = SubResource("OccluderPolygon2D_qbh33")
+occluder_light_mask = 2
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Control/HBoxContainer"]
+occluder = SubResource("OccluderPolygon2D_07jbh")
+occluder_light_mask = 2
 
 [node name="Label" type="Label" parent="Control"]
 visible = false

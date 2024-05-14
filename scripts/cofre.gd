@@ -2,11 +2,12 @@ extends CharacterBody2D
 var ch_in = false
 var opened = 0
 var collectable = false
+var i = 0
 @onready var texto = $TextEdit
 @onready var cofre_a := $"Animació cofre"
 func _physics_process(delta):
 	abrir()
-	if opened == 2 and Input.is_action_just_pressed("e"):
+	if opened == 2 and Input.is_action_just_pressed("e") and ch_in:
 		$"../../Jugador principal".object = $".."
 		$"../AnimatedSprite2D".visible = false
 		texto.visible = false

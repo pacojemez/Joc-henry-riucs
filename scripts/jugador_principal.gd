@@ -10,7 +10,7 @@ var vida = 5
 var cooldown = 0
 var has_key = false
 var got_hit = false
-var object = Object
+@onready var object = $"."
 func _physics_process(delta):
 	if Input.is_action_just_pressed("i"):
 		$Control/HBoxContainer.visible = true
