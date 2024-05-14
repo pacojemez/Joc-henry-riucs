@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c276qayw6bbum"]
+[gd_scene load_steps=6 format=3 uid="uid://c276qayw6bbum"]
 
 [ext_resource type="Texture2D" uid="uid://fl5em5tu5sc" path="res://sprites/objects/pedra.png" id="1_nuk53"]
 
@@ -50,16 +50,14 @@ height = 100.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rurf"]
 radius = 1400.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjly7"]
+radius = 40.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
 collision_layer = 8
 collision_mask = 8
 script = SubResource("GDScript_aroo1")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-visible = false
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_y8flt")
 
 [node name="PedraTiraxinas" type="Sprite2D" parent="."]
 position = Vector2(0, 4)
@@ -71,7 +69,6 @@ region_rect = Rect2(144, 207, 26, 27)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_y8flt")
 
@@ -94,6 +91,9 @@ offset_bottom = -107.0
 scale = Vector2(3, 3)
 text = "press E"
 metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tjly7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

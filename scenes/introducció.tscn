@@ -719,14 +719,17 @@ visible = false
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("14_e7jd0")]
 position = Vector2(99, 84)
+rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("14_e7jd0")]
 position = Vector2(681, 145)
+rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("14_e7jd0")]
 position = Vector2(290, 118)
+rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("14_e7jd0")]
