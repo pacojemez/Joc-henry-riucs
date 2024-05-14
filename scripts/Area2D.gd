@@ -13,8 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == $"../../Jugador principal":
-		if $"../../Jugador principal".has_key == true:
-			
+		if Global.player_has_key == true:
 			has_arrived = 1
 
 

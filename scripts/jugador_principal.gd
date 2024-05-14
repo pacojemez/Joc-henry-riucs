@@ -5,30 +5,29 @@ extends CharacterBody2D
 var has_torch = false
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
-var rocks = 2
 var vida = 5
 var cooldown = 0
 var has_key = false
 var got_hit = false
-@onready var object = $"."
+var object = Object
 func _physics_process(delta):
 	if Input.is_action_just_pressed("i"):
 		$Control/HBoxContainer.visible = true
 	if object == $"../cofre_key":
-		has_key = true
+		Global.player_has_key = true
 	if object == $"../cofre_torch":
-		has_torch = true
+		Global.player_has_torch = true
 	movement(delta)
 	if cooldown > 0:
 		cooldown -= delta
 	if Input.is_action_just_pressed("attack"):
 		shoot_pedra()
 	animations()
-	if rocks == 0:
+	if Global.player_stones == 0:
 		$Control/Label.visible = true
 	else:
 		$Control/Label.visible = false
-	$Control/HBoxContainer/Sprite2D/Label.text = str(rocks)
+	$Control/HBoxContainer/Sprite2D/Label.text = str(Global.player_stones)
 func movement(delta):
 	
 	if Input.is_action_pressed("pujar"):
@@ -49,14 +48,14 @@ func movement(delta):
 func shoot_pedra():
 	var mouse_pos = get_global_mouse_position()
 	var pedra = pedra.instantiate()
-	if cooldown <= 0 and rocks > 0:
+	if cooldown <= 0 and Global.player_stones > 0:
 		add_sibling(pedra)
 		$"."/pivot.look_at(mouse_pos)
 		pedra.set_global_position($"."/pivot/throwing.global_position)
 		pedra.velocity =  ($pivot/throwing.global_position- $pivot.global_position)*100
 		pedra.stopped = false
 		cooldown = 1
-		rocks -= 1
+		Global.player_stones -= 1
 func animations():
 	if has_torch :
 		$PointLight2D.texture_scale = 10

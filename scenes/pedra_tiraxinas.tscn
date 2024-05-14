@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c276qayw6bbum"]
 
-[ext_resource type="Texture2D" uid="uid://fl5em5tu5sc" path="res://sprites/objects/pedra.png" id="1_nuk53"]
+[ext_resource type="Texture2D" uid="uid://c2xe0rltfr7hy" path="res://sprites/objects/pedras.png" id="1_r47e0"]
 
 [sub_resource type="GDScript" id="GDScript_aroo1"]
 script/source = "extends CharacterBody2D
@@ -13,19 +13,26 @@ func _physics_process(delta):
 	move_and_slide()
 	$PedraTiraxinas.look_at(position + velocity)
 	if stopped == true:
+		$pedra_stopped.visible = true
+		$PedraTiraxinas.visible = false
 		velocity = Vector2(0,0)
 		if character_in == true:
 			$Label.visible = true
 			if Input.is_action_just_pressed(\"e\"):
-				$\"../Jugador principal\".rocks+=1
+				Global.player_stones += 1
 				queue_free()
+	else:
+		$pedra_stopped.visible = false
+		$PedraTiraxinas.visible = true
 func _on_area_2d_body_entered(body):
 	if body == $\"../Slime\":
 		$\"../Slime\"/\"Animació slime\".play(\"destroy\")
 		$\"../Slime\".is_dead = true
 		queue_free() # Replace with function body.
-	if body == $\"../tilemap paret\":
+	if body == $\"../tilemap paret\" or velocity == Vector2(0,0):
 		stopped = true
+	if body == $\"../Path1/PathFollow2D/zorro\":
+		pass
 func _on_area_2d_body_exited(body):
 	pass # Replace with function body.
 
@@ -59,13 +66,6 @@ collision_layer = 8
 collision_mask = 8
 script = SubResource("GDScript_aroo1")
 
-[node name="PedraTiraxinas" type="Sprite2D" parent="."]
-position = Vector2(0, 4)
-scale = Vector2(4, 4)
-texture = ExtResource("1_nuk53")
-region_enabled = true
-region_rect = Rect2(144, 207, 26, 27)
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -77,7 +77,6 @@ position = Vector2(-2, 0)
 scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dpickup"]
-visible = false
 position = Vector2(20, 0)
 scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_5rurf")
@@ -94,6 +93,19 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tjly7")
+
+[node name="PedraTiraxinas" type="Sprite2D" parent="."]
+scale = Vector2(3.71429, 4)
+texture = ExtResource("1_r47e0")
+region_enabled = true
+region_rect = Rect2(101, 240, 35, 24)
+
+[node name="pedra_stopped" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("1_r47e0")
+region_enabled = true
+region_rect = Rect2(260, 228, 70, 44)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
