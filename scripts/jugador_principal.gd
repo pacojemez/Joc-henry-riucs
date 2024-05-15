@@ -65,8 +65,6 @@ func shoot_pedra():
 		pedra.stopped = false
 		cooldown = 1
 		Global.player_stones -= 1
-		if not $pium.playing:
-					$pium.play()
 func animations():
 	if Global.player_has_torch:
 		$PointLight2D.texture_scale = 10

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/ficarlaclau.mp3-44d63cb245fb88e6e331cde1a63a0
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -304,15 +304,18 @@ frame_progress = 0.515018
 [node name="Area deteccion" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area deteccion"]
+visible = false
 shape = SubResource("CircleShape2D_jbfws")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_3g5pi")
 
 [node name="Area daño" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area daño"]
+visible = false
 position = Vector2(-1.5, 4)
 shape = SubResource("RectangleShape2D_3wnwo")
 

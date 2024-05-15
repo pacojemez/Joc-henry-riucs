@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1q2k4h5tsn1w"]
+[gd_scene load_steps=6 format=3 uid="uid://c1q2k4h5tsn1w"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_cx0xm"]
 [ext_resource type="Texture2D" uid="uid://668ci7q4x60x" path="res://sprites/sprites menu/1200px-Prado_Herradura.jpg" id="1_t4ill"]
 [ext_resource type="Texture2D" uid="uid://cvau6ceux3tk5" path="res://sprites/sprites menu/arrowKeys-300x205.png" id="3_u5jvo"]
+[ext_resource type="Texture2D" uid="uid://dyo53n5uty885" path="res://sprites/sprites menu/POMES.png" id="4_bcdax"]
 [ext_resource type="Texture2D" uid="uid://lr7akjq5p585" path="res://sprites/sprites menu/mouse-left-button.svg" id="5_6mk6f"]
 
 [node name="Menu" type="Node"]
@@ -13,8 +14,22 @@ position = Vector2(705, 376)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("1_t4ill")
 
+[node name="ArrowKeys-300x205" type="Sprite2D" parent="."]
+position = Vector2(256, 465)
+texture = ExtResource("3_u5jvo")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 326)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(559, 141)
+scale = Vector2(2, 2)
+texture = ExtResource("4_bcdax")
+
+[node name="Mouse-left-button" type="Sprite2D" parent="."]
+position = Vector2(917, 470)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_6mk6f")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -24,38 +39,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 2
-anchor_left = 0.414931
-anchor_top = 0.591049
-anchor_right = 0.480903
-anchor_bottom = -0.279321
-offset_left = 4.0
-offset_right = 60.0
-offset_bottom = 648.0
-scale = Vector2(2, 2)
-text = "START"
-metadata/_edit_use_anchors_ = true
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-offset_left = 800.0
-offset_top = 287.0
-offset_right = 1448.0
-offset_bottom = 935.0
-scale = Vector2(0.5, 0.5)
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("5_6mk6f")
-expand_mode = 2
-flip_h = true
+expand_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
-offset_left = 83.0
-offset_top = 273.0
-offset_right = 731.0
-offset_bottom = 921.0
-scale = Vector2(0.5, 0.5)
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 8
 texture = ExtResource("3_u5jvo")
-expand_mode = 2
+expand_mode = 5
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 489.0
+offset_top = 372.0
+offset_right = -438.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "JUGAR
+"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
