@@ -9,6 +9,8 @@ var got_hit = false
 var object = Object
 var movimiento_naranja = false
 func _physics_process(delta):
+	if Global.player_has_key == true:
+		$Control/HBoxContainer/Sprite2D/key.visible = true
 	if movimiento_naranja:
 		if not $passos.playing:
 			$passos.play()

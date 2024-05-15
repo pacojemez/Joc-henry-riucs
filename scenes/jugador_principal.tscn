@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=76 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dd28hpsxn0exb" path="res://sprites/characters/Vida,etc.png" id="6_aq0di"]
 [ext_resource type="Texture2D" uid="uid://c2xe0rltfr7hy" path="res://sprites/objects/pedras.png" id="7_v371e"]
 [ext_resource type="AudioStream" uid="uid://dasdvdtubkjgb" path="res://sons/pasos_introduccio.mp3" id="8_5k5ix"]
+[ext_resource type="Texture2D" uid="uid://dtbh2s8tyg2s0" path="res://sprites/Pixel Art Key Pack - Animated/Key 2/SILVER/Key 2 - SILVER - 0005.png" id="8_jgtoq"]
 
 [sub_resource type="Animation" id="Animation_cmn1q"]
 resource_name = "hit"
@@ -615,6 +616,24 @@ offset_left = -5.0
 offset_top = -3.0
 offset_right = 35.0
 offset_bottom = 20.0
+scale = Vector2(0.3, 0.3)
+text = "1"
+
+[node name="key" type="Node2D" parent="Control/HBoxContainer/Sprite2D"]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/HBoxContainer/Sprite2D/key"]
+position = Vector2(4, 0.5)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_jgtoq")
+region_enabled = true
+region_rect = Rect2(0, 0, 10, 28)
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer/Sprite2D/key"]
+offset_left = 7.0
+offset_top = -2.5
+offset_right = 47.0
+offset_bottom = 20.5
 scale = Vector2(0.3, 0.3)
 text = "1"
 

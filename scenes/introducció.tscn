@@ -490,6 +490,7 @@ size = Vector2(7, 16)
 radius = 20.025
 
 [node name="Introducció" type="Node2D"]
+position = Vector2(660, 256)
 
 [node name="Tilemaps" type="Node2D" parent="."]
 

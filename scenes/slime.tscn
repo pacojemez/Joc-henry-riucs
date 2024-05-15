@@ -4,6 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://denw2qiptjupw" path="res://sprites/characters/slime.png" id="1_yo3xs"]
 [ext_resource type="AudioStream" uid="uid://cinbyndwsh285" path="res://sons/mort_slime.mp3" id="3_odqyd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oo4b"]
+size = Vector2(12.5, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x7jdw"]
+radius = 9.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vps1e"]
 atlas = ExtResource("1_yo3xs")
 region = Rect2(0, 128, 32, 32)
@@ -210,28 +216,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x7jdw"]
-radius = 9.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oo4b"]
-size = Vector2(12.5, 11)
-
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_4k2ka")
 
-[node name="Animació slime" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3b0dd")
-animation = &"destroy"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1oo4b")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_x7jdw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1oo4b")
+[node name="Animació slime" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3b0dd")
+animation = &"destroy"
 
 [node name="slimesound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_odqyd")

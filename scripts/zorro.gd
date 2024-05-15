@@ -20,8 +20,13 @@ var walking = true
 var ataque = false
 var ch_in = false
 var vida = 11
+var temps_critical = 1
 func _physics_process(delta):
 	calc_velocitat()
+	if $Critical.visible == true:
+		temps_critical -= delta
+		if temps_critical <= 0:
+			$Critical.visible = false
 	var prev_pos = pivot_ataque.global_position
 	if not charging:
 		animations()

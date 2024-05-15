@@ -32,7 +32,12 @@ func _on_area_2d_body_entered(body):
 	if body == $\"../tilemap paret\" or velocity == Vector2(0,0):
 		stopped = true
 	if body == $\"../Path1/PathFollow2D/zorro\":
-		$\"../Path1/PathFollow2D/zorro\".vida -= 1
+		if randf_range(0,5) == 0:
+			$\"../Path1/PathFollow2D/zorro\".vida -= 2
+			$\"../Path1/PathFollow2D/zorro/Critical\".visible = true
+		else:
+			$\"../Path1/PathFollow2D/zorro\".vida -= 1
+			
 		queue_free()
 func _on_area_2d_body_exited(body):
 	pass # Replace with function body.
