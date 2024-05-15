@@ -13,20 +13,21 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == $"../../Jugador principal":
-		if Global.player_has_key == true:
-			has_arrived = 1
+		$Label.visible = true 
+		has_arrived = 1
 
 
 func _on_body_exited(body):
 	if body == $"../../Jugador principal":
 		has_arrived = 0
-		$Label.text = ""
+		$Label.visible = false
 func _physics_process(delta):
 	if has_arrived == 1:
-		$Label.text = "press E"
 		if Input.is_action_just_pressed("e"):
 			j = 1
 	if j == 1:
 		$"../AnimatedSprite2D".play("porta obrint")
+		$"../AnimatedSprite2D2".play("porta obrint")
 		$"../CollisionShape2D".queue_free()
+		$"../CollisionShape2D2".queue_free()
 		$".".queue_free()
