@@ -98,16 +98,9 @@ func _body_exited(body):
 	if body == $"../../../Jugador principal":
 		character_in = false
 
-func _body_entered_ataque(body):
-	ataque = true # Replace with function body.
-
-func _body_exited_ataque(body):
-	ataque = false# Replace with function body.
-
 func _body_entered_daño(body):
 	if body == $"../../../Jugador principal":
 		ch_in = true # Replace with function body.
-
 
 func _body_exited_daño(body):
 	if body == $"../../../Jugador principal":

@@ -198,7 +198,7 @@ radius = 46.0435
 size = Vector2(15, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wnwo"]
-size = Vector2(16, 20)
+size = Vector2(21, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dk3p"]
 atlas = ExtResource("3_771ob")
@@ -313,13 +313,22 @@ shape = SubResource("RectangleShape2D_3g5pi")
 [node name="Area daño" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area daño"]
-position = Vector2(0, 2)
+position = Vector2(-1.5, 4)
 shape = SubResource("RectangleShape2D_3wnwo")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.96046e-08, -15)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_5jt35")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = -25.0
+offset_right = 105.0
+offset_bottom = -2.0
+rotation = 0.523599
+scale = Vector2(0.2, 0.2)
+text = "CRITICAL HIT"
 
 [connection signal="body_entered" from="Area deteccion" to="." method="_body_entered"]
 [connection signal="body_exited" from="Area deteccion" to="." method="_body_exited"]
