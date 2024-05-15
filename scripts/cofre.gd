@@ -30,6 +30,8 @@ func abrir():
 				$Sprite2D.visible = true
 				texto.visible = true
 				texto.text = "press E to collect"
+				if not $"../../cofre_torch/sonidopillarobjeto".playing:
+					$"../../cofre_torch/sonidopillarobjeto".play()
 				$"../AnimationPlayer".play("grow")
 				opened = 2
 

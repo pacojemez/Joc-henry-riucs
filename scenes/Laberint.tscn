@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://72leb4swsoin"]
+[gd_scene load_steps=64 format=3 uid="uid://72leb4swsoin"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_v1ex3"]
@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://c0goewslhko1o" path="res://sprites/objects/Torch Animated.png" id="5_tcd5y"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="6_tec74"]
 [ext_resource type="Texture2D" uid="uid://dd28hpsxn0exb" path="res://sprites/characters/Vida,etc.png" id="7_65dmx"]
+[ext_resource type="AudioStream" uid="uid://cyitp4lmv67s5" path="res://sons/porta.mp3" id="7_8810e"]
+[ext_resource type="AudioStream" uid="uid://jtkbwvjht4y5" path="res://sons/ficarlaclau.mp3" id="8_67b6r"]
 [ext_resource type="Texture2D" uid="uid://dtepc25x0o4md" path="res://sprites/assets terra i parets/Block Door/Block Door Close Sheet.png" id="10_fvxj1"]
 [ext_resource type="Texture2D" uid="uid://b6lw33tygbodu" path="res://sprites/Pixel Art Key Pack - Animated/Key 2/Key 2 - SILVER - Spritesheet.png" id="11_fy4y6"]
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="11_q5dv5"]
+[ext_resource type="AudioStream" uid="uid://dgk76ixweg5vx" path="res://sons/agafarclau.mp3" id="12_57jsw"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="12_kentr"]
 [ext_resource type="AudioStream" uid="uid://s7f5aairswu3" path="res://sons/musica_laberint.mp3" id="14_11tig"]
 [ext_resource type="Script" path="res://scripts/escales.gd" id="14_bvse1"]
@@ -110,7 +113,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"porta obrint",
-"speed": 7.0
+"speed": 1.7
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5lub"]
@@ -399,7 +402,9 @@ position = Vector2(352, 8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="porta"]
 sprite_frames = SubResource("SpriteFrames_o6cca")
-animation = &"porta obrint"
+animation = &"Porta tancant"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porta"]
 position = Vector2(0, -5.5)
@@ -420,6 +425,14 @@ offset_right = 9.0
 offset_bottom = 46.5
 scale = Vector2(0.2, 0.2)
 metadata/_edit_use_anchors_ = true
+
+[node name="sonidoporta" type="AudioStreamPlayer2D" parent="porta/Area2D"]
+position = Vector2(-352, -2.5)
+stream = ExtResource("7_8810e")
+
+[node name="ficarclau" type="AudioStreamPlayer2D" parent="porta/Area2D"]
+stream = ExtResource("8_67b6r")
+volume_db = 12.876
 
 [node name="Sprite2D" type="Sprite2D" parent="porta"]
 position = Vector2(-24, 1)
@@ -468,6 +481,9 @@ libraries = {
 "": SubResource("AnimationLibrary_pout2")
 }
 speed_scale = 2.5
+
+[node name="sonidopillarobjeto" type="AudioStreamPlayer2D" parent="cofre_torch"]
+stream = ExtResource("12_57jsw")
 
 [node name="musica_laberint" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_11tig")
