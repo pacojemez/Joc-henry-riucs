@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://caq00ix5eowfi"]
+[gd_scene load_steps=32 format=3 uid="uid://caq00ix5eowfi"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_4k2ka"]
 [ext_resource type="Texture2D" uid="uid://denw2qiptjupw" path="res://sprites/characters/slime.png" id="1_yo3xs"]
+[ext_resource type="AudioStream" uid="uid://cinbyndwsh285" path="res://sons/mort_slime.mp3" id="3_odqyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vps1e"]
 atlas = ExtResource("1_yo3xs")
@@ -126,7 +127,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"destroy",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -222,7 +223,7 @@ script = ExtResource("1_4k2ka")
 
 [node name="Animació slime" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3b0dd")
-animation = &"idle"
+animation = &"destroy"
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -231,5 +232,9 @@ shape = SubResource("CircleShape2D_x7jdw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1oo4b")
+
+[node name="slimesound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_odqyd")
+volume_db = 24.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

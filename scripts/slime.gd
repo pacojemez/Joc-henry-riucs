@@ -3,7 +3,6 @@ var is_dead = false
 
 	
 func _physics_process(delta):
-	
 	move_and_slide()
 	dead()
 	mirar()
@@ -18,6 +17,8 @@ func mirar():
 		$"Animació slime".flip_h = false
 func dead():
 	if is_dead == true:
+		if not $slimesound.playing:
+			$slimesound.play()
 		if $"Animació slime".animation == "destroy" and $"Animació slime".frame == 5:
 			queue_free()
 	else:
