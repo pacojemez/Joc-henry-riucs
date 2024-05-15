@@ -7,7 +7,11 @@ const JUMP_VELOCITY = -100.0
 var cooldown = 0
 var got_hit = false
 var object = Object
+var movimiento_naranja = false
 func _physics_process(delta):
+	if movimiento_naranja:
+		if not $passos.playing:
+			$passos.play()
 	if Input.is_action_just_pressed("i"):
 		$Control/HBoxContainer.visible = true
 	if object == $"../cofre_key":
@@ -38,8 +42,14 @@ func movement(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if velocity != Vector2(0,0):
+			movimiento_naranja = true
+	else:
+		movimiento_naranja = false
+		$passos.stop()
 	velocity.normalized()
 	move_and_slide()
 func shoot_pedra():

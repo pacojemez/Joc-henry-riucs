@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=75 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bv6tqrs2sim7y" path="res://sprites/characters/Vida.png" id="5_i51hv"]
 [ext_resource type="Texture2D" uid="uid://dd28hpsxn0exb" path="res://sprites/characters/Vida,etc.png" id="6_aq0di"]
 [ext_resource type="Texture2D" uid="uid://c2xe0rltfr7hy" path="res://sprites/objects/pedras.png" id="7_v371e"]
+[ext_resource type="AudioStream" uid="uid://dasdvdtubkjgb" path="res://sons/pasos_introduccio.mp3" id="8_5k5ix"]
 
 [sub_resource type="Animation" id="Animation_cmn1q"]
 resource_name = "hit"
@@ -637,3 +638,7 @@ offset_right = 104.0
 offset_bottom = -1.0
 scale = Vector2(0.3, 0.3)
 text = "You don't have rocks!"
+
+[node name="passos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5k5ix")
+volume_db = 7.495

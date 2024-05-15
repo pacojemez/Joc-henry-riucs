@@ -5,4 +5,4 @@ func _on_button_pressed():
 	Global.player_stones = 4
 	Global.player_health = 5
 	get_tree().change_scene_to_file("res://scenes/introducció.tscn")
-
+	
