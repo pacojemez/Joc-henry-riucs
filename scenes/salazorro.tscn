@@ -419,6 +419,7 @@ position = Vector2(22, 24.5)
 shape = SubResource("RectangleShape2D_eg0y6")
 
 [node name="Label" type="Label" parent="porta/Area2D"]
+visible = false
 offset_left = -19.0
 offset_top = 11.5
 offset_right = 19.0
@@ -446,21 +447,22 @@ position = Vector2(-24, 24.5)
 shape = SubResource("RectangleShape2D_eg0y6")
 
 [node name="Label" type="Label" parent="porta2/Area2D"]
-offset_left = -29.0
-offset_top = 13.5
-offset_right = 9.0
-offset_bottom = 46.5
+offset_left = -39.0
+offset_top = -16.5
+offset_right = 16.0
+offset_bottom = 16.5
+scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_s5cau")]
-position = Vector2(107.5, 102.5)
+position = Vector2(109, 104.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
 scale = Vector2(0.7, 0.7)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ycp3d")
-texture_scale = 4.0
+texture_scale = 10.0
 
 [node name="MenuJoc" parent="Jugador principal" instance=ExtResource("12_j75xt")]
 visible = false
@@ -471,6 +473,10 @@ visible = false
 position = Vector2(108, 321.625)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_k7xsd")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(0, 1)
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="zona ataque/ataque/Area2D" to="Path1/PathFollow2D/zorro" method="_body_entered_ataque"]
 [connection signal="body_exited" from="zona ataque/ataque/Area2D" to="Path1/PathFollow2D/zorro" method="_body_exited_ataque"]
