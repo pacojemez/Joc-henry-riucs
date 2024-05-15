@@ -10,7 +10,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body == $".."/"Jugador principal":
 		$".."/"Jugador principal".got_hit = true
-		$".."/"Jugador principal".vida += -1
+		Global.player_health += -1
 func mirar():
 	if global_position.x > $".."/"Jugador principal".global_position.x:
 		$"Animació slime".flip_h = true

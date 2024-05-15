@@ -19,7 +19,7 @@ var able_to_attack
 var walking = true
 var ataque = false
 var ch_in = false
-var vida = 10
+var vida = 11
 func _physics_process(delta):
 	calc_velocitat()
 	var prev_pos = pivot_ataque.global_position
@@ -65,7 +65,7 @@ func animations():
 	if velocitat.y < 0 and velocitat.x < -v_max:
 		animacio_zorro.play("walk")
 		animacio_zorro.flip_h = true
-	$AnimatedSprite2D2.s
+	$AnimatedSprite2D2.frame = vida
 func atacar(delta):
 	if character_in and able_to_attack:
 		charging = true
@@ -77,7 +77,7 @@ func atacar(delta):
 		attack_time = 1
 		if $"../../../zona ataque/ataque/6".scale.y >0.09:
 			if ataque:
-				$"../../../Jugador principal".vida -= 1
+				Global.player_health -= 2
 			animation.pause()
 			cooldown = 3
 			able_to_attack = false
@@ -110,5 +110,5 @@ func _body_entered_daño(body):
 
 
 func _body_exited_daño(body):
-	if body == $"../../../Jugador principal":º
+	if body == $"../../../Jugador principal":
 		ch_in = false # Replace with function body.

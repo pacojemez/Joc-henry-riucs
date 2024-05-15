@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://m7khujqsa6fc" path="res://scenes/antorcha.tscn" id="3_x3swk"]
 [ext_resource type="Texture2D" uid="uid://bv6tqrs2sim7y" path="res://sprites/characters/Vida.png" id="5_i51hv"]
 [ext_resource type="Texture2D" uid="uid://dd28hpsxn0exb" path="res://sprites/characters/Vida,etc.png" id="6_aq0di"]
-[ext_resource type="Texture2D" uid="uid://fl5em5tu5sc" path="res://sprites/objects/pedra.png" id="7_6b38w"]
+[ext_resource type="Texture2D" uid="uid://c2xe0rltfr7hy" path="res://sprites/objects/pedras.png" id="7_v371e"]
 
 [sub_resource type="Animation" id="Animation_cmn1q"]
 resource_name = "hit"
@@ -605,9 +605,9 @@ region_rect = Rect2(144, 17, 32, 13)
 [node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/Sprite2D"]
 position = Vector2(-9, 0.5)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_6b38w")
+texture = ExtResource("7_v371e")
 region_enabled = true
-region_rect = Rect2(145, 207, 25, 25)
+region_rect = Rect2(99, 238, 38, 30)
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/Sprite2D"]
 offset_left = -5.0

@@ -2,12 +2,9 @@ extends CharacterBody2D
 @export var pedra : PackedScene
 @onready var animacio = $"Animació jugador principal"
 @onready var anim = $Control/HBoxContainer/AnimatedSprite2D
-var has_torch = false
 const SPEED = 100.0
 const JUMP_VELOCITY = -100.0
-var vida = 5
 var cooldown = 0
-var has_key = false
 var got_hit = false
 var object = Object
 func _physics_process(delta):
@@ -57,9 +54,9 @@ func shoot_pedra():
 		cooldown = 1
 		Global.player_stones -= 1
 func animations():
-	if has_torch :
+	if Global.player_has_torch:
 		$PointLight2D.texture_scale = 10
-	if vida > 0:
+	if Global.player_health > 0:
 		if velocity.x > 0:
 			animacio.play("run_side")
 			animacio.flip_h = false
@@ -70,10 +67,10 @@ func animations():
 			animacio.play("idle_side")
 		if velocity.y < 0 and velocity.x == 0:
 			animacio.play("run_up")
-			if has_torch:
+			if Global.player_has_torch:
 				$CharacterBody2D.visible = true
 		else:
-			if has_torch:
+			if Global.player_has_torch:
 				$CharacterBody2D.visible = false
 		if velocity.y > 0 and velocity.x == 0:
 			animacio.play("run_down")
@@ -93,10 +90,10 @@ func animations():
 		$AnimationPlayer2.play("hit")
 		got_hit = false
 	
-	if vida == 0:
+	if Global.player_health == 0:
 		anim.frame = 0
 		animacio.play("die")
 		if animacio.frame == 3:
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	else:
-		anim.frame = vida
+		anim.frame = Global.player_health
