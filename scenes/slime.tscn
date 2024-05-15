@@ -213,7 +213,7 @@ animations = [{
 radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1oo4b"]
-size = Vector2(13, 12)
+size = Vector2(12.5, 11)
 
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 15
@@ -230,7 +230,6 @@ animation = &"idle"
 shape = SubResource("CircleShape2D_x7jdw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_1oo4b")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

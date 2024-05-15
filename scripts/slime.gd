@@ -8,17 +8,17 @@ func _physics_process(delta):
 	dead()
 	mirar()
 func _on_area_2d_body_entered(body):
-	if body == $".."/"Jugador principal":
-		$".."/"Jugador principal".got_hit = true
+	if body == $"../../Jugador principal":
+		$"../../Jugador principal".got_hit = true
 		Global.player_health += -1
 func mirar():
-	if global_position.x > $".."/"Jugador principal".global_position.x:
+	if global_position.x > $"../../Jugador principal".global_position.x:
 		$"Animació slime".flip_h = true
 	else:
 		$"Animació slime".flip_h = false
 func dead():
 	if is_dead == true:
 		if $"Animació slime".animation == "destroy" and $"Animació slime".frame == 5:
-			$"../Slime".queue_free()
+			queue_free()
 	else:
 		$"Animació slime".play("idleandjump")

@@ -25,9 +25,9 @@ func _physics_process(delta):
 		$pedra_stopped.visible = false
 		$PedraTiraxinas.visible = true
 func _on_area_2d_body_entered(body):
-	if body == $\"../Slime\":
-		$\"../Slime\"/\"Animació slime\".play(\"destroy\")
-		$\"../Slime\".is_dead = true
+	if body.get_parent() == $\"../slimes\":
+		body.get_child(0).play(\"destroy\")
+		body.is_dead = true
 		queue_free() # Replace with function body.
 	if body == $\"../tilemap paret\" or velocity == Vector2(0,0):
 		stopped = true
