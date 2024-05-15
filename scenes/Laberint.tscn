@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://72leb4swsoin"]
+[gd_scene load_steps=65 format=3 uid="uid://72leb4swsoin"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_55egh"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_v1ex3"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://s7f5aairswu3" path="res://sons/musica_laberint.mp3" id="14_11tig"]
 [ext_resource type="Script" path="res://scripts/escales.gd" id="14_bvse1"]
 [ext_resource type="Script" path="res://scripts/musica_laberint.gd" id="15_vhnyr"]
+[ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="19_0xpwt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyhm4"]
 atlas = ExtResource("10_fvxj1")
@@ -526,6 +527,36 @@ script = ExtResource("14_bvse1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(30, 13)
 shape = SubResource("RectangleShape2D_njtsi")
+
+[node name="pedra1" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(302, 389)
+
+[node name="pedra2" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 343)
+
+[node name="pedra3" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 333)
+
+[node name="pedra4" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 323)
+
+[node name="pedra5" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 313)
+
+[node name="pedra6" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 303)
+
+[node name="pedra7" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 293)
+
+[node name="pedra8" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 283)
+
+[node name="pedra9" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 273)
+
+[node name="pedra10" parent="." instance=ExtResource("19_0xpwt")]
+position = Vector2(798, 263)
 
 [connection signal="body_entered" from="porta/Area2D" to="porta/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="porta/Area2D" to="porta/Area2D" method="_on_body_exited"]
