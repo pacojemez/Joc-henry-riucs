@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=77 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2xe0rltfr7hy" path="res://sprites/objects/pedras.png" id="7_v371e"]
 [ext_resource type="AudioStream" uid="uid://dasdvdtubkjgb" path="res://sons/pasos_introduccio.mp3" id="8_5k5ix"]
 [ext_resource type="Texture2D" uid="uid://dtbh2s8tyg2s0" path="res://sprites/Pixel Art Key Pack - Animated/Key 2/SILVER/Key 2 - SILVER - 0005.png" id="8_jgtoq"]
+[ext_resource type="AudioStream" uid="uid://cardeerigc5kj" path="res://sons/sonido_tirachinas.mp3" id="10_k1bq5"]
 
 [sub_resource type="Animation" id="Animation_cmn1q"]
 resource_name = "hit"
@@ -661,3 +662,6 @@ text = "You don't have rocks!"
 [node name="passos" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_5k5ix")
 volume_db = 7.495
+
+[node name="pium" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_k1bq5")

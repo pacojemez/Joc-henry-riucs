@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bgqw61wc0cpfp"]
+[gd_scene load_steps=36 format=3 uid="uid://bgqw61wc0cpfp"]
 
 [ext_resource type="PackedScene" uid="uid://dg7ut7x4xmaxu" path="res://scenes/tilemap terra.tscn" id="1_j8vvv"]
 [ext_resource type="PackedScene" uid="uid://k1gsqdqm4j7q" path="res://scenes/tile_map parets.tscn" id="2_edehd"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="10_4k35j"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="11_q5qo1"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="12_j75xt"]
+[ext_resource type="AudioStream" uid="uid://jtkbwvjht4y5" path="res://sons/ficarlaclau.mp3" id="13_eisyv"]
+[ext_resource type="AudioStream" uid="uid://cyitp4lmv67s5" path="res://sons/porta.mp3" id="14_af4xe"]
 
 [sub_resource type="Animation" id="Animation_hibop"]
 resource_name = "aparecer ataque"
@@ -410,6 +412,15 @@ animation = &"porta obrint"
 position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_57tg2")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="porta"]
+position = Vector2(48, 0)
+sprite_frames = SubResource("SpriteFrames_8um83")
+animation = &"porta obrint"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="porta"]
+position = Vector2(48, -5.5)
+shape = SubResource("RectangleShape2D_57tg2")
+
 [node name="Area2D" type="Area2D" parent="porta"]
 position = Vector2(0, -5.5)
 script = ExtResource("11_q5qo1")
@@ -419,43 +430,20 @@ position = Vector2(22, 24.5)
 shape = SubResource("RectangleShape2D_eg0y6")
 
 [node name="Label" type="Label" parent="porta/Area2D"]
-visible = false
 offset_left = -19.0
 offset_top = 11.5
 offset_right = 19.0
 offset_bottom = 44.5
 metadata/_edit_use_anchors_ = true
 
-[node name="porta2" type="StaticBody2D" parent="."]
-position = Vector2(120, 116)
-scale = Vector2(0.5, 0.5)
+[node name="ficarclau" type="AudioStreamPlayer" parent="porta"]
+stream = ExtResource("13_eisyv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="porta2"]
-sprite_frames = SubResource("SpriteFrames_8um83")
-animation = &"porta obrint"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="porta2"]
-position = Vector2(0, -5.5)
-shape = SubResource("RectangleShape2D_57tg2")
-
-[node name="Area2D" type="Area2D" parent="porta2"]
-position = Vector2(0, -5.5)
-script = ExtResource("11_q5qo1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="porta2/Area2D"]
-position = Vector2(-24, 24.5)
-shape = SubResource("RectangleShape2D_eg0y6")
-
-[node name="Label" type="Label" parent="porta2/Area2D"]
-offset_left = -39.0
-offset_top = -16.5
-offset_right = 16.0
-offset_bottom = 16.5
-scale = Vector2(0.5, 0.5)
-metadata/_edit_use_anchors_ = true
+[node name="sonidoporta" type="AudioStreamPlayer" parent="porta"]
+stream = ExtResource("14_af4xe")
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_s5cau")]
-position = Vector2(109, 104.5)
+position = Vector2(108, 236.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
@@ -482,5 +470,3 @@ color = Color(0, 0, 0, 1)
 [connection signal="body_exited" from="zona ataque/ataque/Area2D" to="Path1/PathFollow2D/zorro" method="_body_exited_ataque"]
 [connection signal="body_entered" from="porta/Area2D" to="porta/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="porta/Area2D" to="porta/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="porta2/Area2D" to="porta2/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="porta2/Area2D" to="porta2/Area2D" method="_on_body_exited"]

@@ -500,7 +500,7 @@ scale = Vector2(1, 0.857143)
 scale = Vector2(0.7, 0.7)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_17kym")
-texture_scale = 4.0
+texture_scale = 50.0
 
 [node name="MenuJoc" parent="Jugador principal" instance=ExtResource("6_tec74")]
 visible = false

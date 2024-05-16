@@ -46,54 +46,57 @@ func calc_velocitat():
 	velocitat = position_actual - position_antiga
 
 func animations():
-	if velocitat.x > 10:
-		animacio_zorro.play("walk")
-		animacio_zorro.flip_h = false
-	if velocitat.x < -10:
-			animacio_zorro.play("walk")
-			animacio_zorro.flip_h = true
-	if velocitat.x == 0 and velocitat.y == 0:
-			animacio_zorro.play("idle")
-	if velocitat.y < 0 and abs(velocitat.x) < v_max:
-		animacio_zorro.play("walk_up")
-	if velocitat.y > 0 and abs(velocitat.x) < v_max:
-		animacio_zorro.play("run_down")
-	if velocitat.y > 0 and velocitat.x < -v_max:
-		animacio_zorro.play("walk")
-		animacio_zorro.flip_h = true
-	if velocitat.y > 0 and velocitat.x > v_max:
+	if vida == 0:
+		animacio_zorro.play("oh_dios")
+		Global.zorro_dead = true
+	else:
+		if velocitat.x > 10:
 			animacio_zorro.play("walk")
 			animacio_zorro.flip_h = false
-	if velocitat.y < 0 and velocitat.x > v_max:
-		animacio_zorro.play("walk")
-		animacio_zorro.flip_h = false
-	if velocitat.y < 0 and velocitat.x < -v_max:
-		animacio_zorro.play("walk")
-		animacio_zorro.flip_h = true
-	$AnimatedSprite2D2.frame = vida
-func atacar(delta):
-	if character_in and able_to_attack:
-		charging = true
-	if attack_time < 0 and able_to_attack:
-		pivot_area.visible = false
-		pivot_ataque.visible = true
-		animation.play("aparecer ataque")
-		charging = false
-		attack_time = 1
-		if $"../../../zona ataque/ataque/6".scale.y >0.09:
-			if ataque:
+		if velocitat.x < -10:
+				animacio_zorro.play("walk")
+				animacio_zorro.flip_h = true
+		if velocitat.x == 0 and velocitat.y == 0:
+				animacio_zorro.play("idle")
+		if velocitat.y < 0 and abs(velocitat.x) < v_max:
+			animacio_zorro.play("walk_up")
+		if velocitat.y > 0 and abs(velocitat.x) < v_max:
+			animacio_zorro.play("run_down")
+		if velocitat.y > 0 and velocitat.x < -v_max:
+			animacio_zorro.play("walk")
+			animacio_zorro.flip_h = true
+		if velocitat.y > 0 and velocitat.x > v_max:
+				animacio_zorro.play("walk")
+				animacio_zorro.flip_h = false
+		if velocitat.y < 0 and velocitat.x > v_max:
+			animacio_zorro.play("walk")
+			animacio_zorro.flip_h = false
+		if velocitat.y < 0 and velocitat.x < -v_max:
+			animacio_zorro.play("walk")
+			animacio_zorro.flip_h = true
+		$AnimatedSprite2D2.frame = vida
+	func atacar(delta):
+		if character_in and able_to_attack:
+			charging = true
+		if attack_time < 0 and able_to_attack:
+			pivot_area.visible = false
+			pivot_ataque.visible = true
+			animation.play("aparecer ataque")
+			charging = false
+			attack_time = 1
+			if $"../../../zona ataque/ataque/6".scale.y >0.09:
 				Global.player_health -= 2
-			animation.pause()
-			cooldown = 3
-			able_to_attack = false
-	if charging and able_to_attack:
-		if attack_time > 0.5:
-			position_character = $"../../../Jugador principal".global_position
-			pivot_area.visible = true
-			pivot_atk.look_at(position_character)
-		attack_time-=delta
-		path.go = false
-		animacio_zorro.play("cargando_ataque")
+				animation.pause()
+				cooldown = 3
+				able_to_attack = false
+		if charging and able_to_attack:
+			if attack_time > 0.5:
+				position_character = $"../../../Jugador principal".global_position
+				pivot_area.visible = true
+				pivot_atk.look_at(position_character)
+			attack_time-=delta
+			path.go = false
+			animacio_zorro.play("cargando_ataque")
 		
 func _body_entered(body):
 	if body == $"../../../Jugador principal":
