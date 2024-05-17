@@ -88,6 +88,7 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_5rurf")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -130.0
 offset_top = -100.0
 offset_right = 46.0
