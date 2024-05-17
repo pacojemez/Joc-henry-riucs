@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bheajoh45numy" path="res://sprites/characters/zorro/zona ataque.png" id="4_4atxr"]
 [ext_resource type="Texture2D" uid="uid://dtwjsvw7oti7q" path="res://sprites/characters/zorro/alerta.png" id="5_2u0rr"]
 [ext_resource type="PackedScene" uid="uid://opeli7m0jmlu" path="res://scenes/jugador_principal.tscn" id="5_s5cau"]
+[ext_resource type="Script" path="res://scripts/porta_zorro.gd" id="8_jqhur"]
 [ext_resource type="Texture2D" uid="uid://dtepc25x0o4md" path="res://sprites/assets terra i parets/Block Door/Block Door Close Sheet.png" id="9_1vt1c"]
 [ext_resource type="Texture2D" uid="uid://b0w6svkw1d7q1" path="res://sprites/assets terra i parets/Block Door/Block Door Sheet.png" id="10_4k35j"]
 [ext_resource type="Script" path="res://scripts/porta_final.gd" id="11_ehbwv"]
-[ext_resource type="Script" path="res://scripts/Area2D.gd" id="11_q5qo1"]
 [ext_resource type="Script" path="res://scripts/escala.gd" id="11_xwbi1"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="12_j75xt"]
 [ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="13_52rwp"]
@@ -276,7 +276,7 @@ size = Vector2(32, 5)
 size = Vector2(32.5, 23.5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_27g1o"]
-polygon = PackedVector2Array(-16, -8, 64, -8, 64, -18, -16, -18)
+polygon = PackedVector2Array(-32, -7, 89, -7, 88, -18, -31, -18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7xsd"]
 size = Vector2(80, 29.5)
@@ -385,7 +385,7 @@ animations = [{
 size = Vector2(32, 5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ddcgo"]
-polygon = PackedVector2Array(-16, -8, 16, -8, 16, -7, -16, -7)
+polygon = PackedVector2Array(-26, -18, 37, -19, 38, -7, -26, -7)
 
 [sub_resource type="Curve2D" id="Curve2D_taws8"]
 _data = {
@@ -519,17 +519,17 @@ shape = SubResource("RectangleShape2D_57tg2")
 
 [node name="Area2D" type="Area2D" parent="porta"]
 position = Vector2(0, -5.5)
-script = ExtResource("11_q5qo1")
+script = ExtResource("8_jqhur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porta/Area2D"]
 position = Vector2(22, 24.5)
 shape = SubResource("RectangleShape2D_eg0y6")
 
 [node name="Label" type="Label" parent="porta/Area2D"]
-offset_left = 15.0
-offset_top = -16.5
-offset_right = 53.0
-offset_bottom = 16.5
+offset_left = 5.0
+offset_top = 1.5
+offset_right = 86.0
+offset_bottom = 34.5
 scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
@@ -555,10 +555,6 @@ shape = SubResource("RectangleShape2D_k7xsd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="escala/Area2D"]
 position = Vector2(96.5, -72.5)
 shape = SubResource("RectangleShape2D_3arkx")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2(0, 1)
-color = Color(0, 0, 0, 1)
 
 [node name="porta_final" type="StaticBody2D" parent="."]
 position = Vector2(96, -28)
@@ -634,7 +630,7 @@ scale = Vector2(0.5, 0.5)
 curve = SubResource("Curve2D_taws8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path1"]
-position = Vector2(-45.2368, 93.0802)
+position = Vector2(-45.2364, 93.0803)
 rotation = 0.515809
 scale = Vector2(0.5, 0.5)
 progress = 721.585
@@ -656,15 +652,17 @@ position = Vector2(108, 309)
 scale = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
-visible = false
 position = Vector2(-3, -7)
 scale = Vector2(0.7, 0.7)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ycp3d")
-texture_scale = 10.0
+texture_scale = 4.0
 
 [node name="MenuJoc" parent="Jugador principal" instance=ExtResource("12_j75xt")]
 visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="zona ataque/ataque/Area2D" to="Path1/PathFollow2D/zorro" method="_body_entered_ataque"]
 [connection signal="body_exited" from="zona ataque/ataque/Area2D" to="Path1/PathFollow2D/zorro" method="_body_exited_ataque"]

@@ -96,6 +96,8 @@ func atacar(delta):
 		attack_time = 1
 		if $"../../../zona ataque/ataque/6".scale.y >0.09:
 			if character_in:
+				if Global.player_stones == 0:
+					Global.player_health -= 10
 				Global.player_health -= 2
 			animation.pause()
 			cooldown = 3

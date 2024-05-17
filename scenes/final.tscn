@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c71gc1d1jgve5"]
+[gd_scene load_steps=34 format=3 uid="uid://c71gc1d1jgve5"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_2t3dm"]
 [ext_resource type="Texture2D" uid="uid://dh3olcotaxu1s" path="res://sprites/assets terra i parets/Set 1.png" id="2_8pin4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://nvpuqp0aki74" path="res://sprites/objects/golden_apple.png" id="6_oywvh"]
 [ext_resource type="Texture2D" uid="uid://cxp6xefbw4fmi" path="res://sprites/objects/plate golden.png" id="7_ydlun"]
 [ext_resource type="Script" path="res://scripts/Poma_d'or.gd" id="8_clobu"]
+[ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="9_ht5fd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od2rp"]
 texture = ExtResource("1_2t3dm")
@@ -1095,7 +1096,6 @@ texture = SubResource("GradientTexture2D_6pkpx")
 texture_scale = 5.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="structure" type="Node2D" parent="."]
@@ -1173,5 +1173,7 @@ script = ExtResource("8_clobu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(270.5, 224.5)
 shape = SubResource("RectangleShape2D_6x702")
+
+[node name="MenuJoc" parent="." instance=ExtResource("9_ht5fd")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

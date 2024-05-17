@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1q2k4h5tsn1w"]
+[gd_scene load_steps=7 format=3 uid="uid://c1q2k4h5tsn1w"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_cx0xm"]
 [ext_resource type="Texture2D" uid="uid://668ci7q4x60x" path="res://sprites/sprites menu/1200px-Prado_Herradura.jpg" id="1_t4ill"]
 [ext_resource type="Texture2D" uid="uid://cvau6ceux3tk5" path="res://sprites/sprites menu/arrowKeys-300x205.png" id="3_u5jvo"]
 [ext_resource type="Texture2D" uid="uid://dyo53n5uty885" path="res://sprites/sprites menu/POMES.png" id="4_bcdax"]
 [ext_resource type="Texture2D" uid="uid://lr7akjq5p585" path="res://sprites/sprites menu/mouse-left-button.svg" id="5_6mk6f"]
+[ext_resource type="Texture2D" uid="uid://di2t12f5smmln" path="res://sprites/sprites menu/WASD.png" id="6_k30e1"]
 
 [node name="Menu" type="Node"]
 script = ExtResource("1_cx0xm")
@@ -15,7 +16,8 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("1_t4ill")
 
 [node name="ArrowKeys-300x205" type="Sprite2D" parent="."]
-position = Vector2(256, 465)
+position = Vector2(243, 376)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_u5jvo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -31,37 +33,12 @@ position = Vector2(917, 470)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_6mk6f")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Wasd" type="Sprite2D" parent="."]
+position = Vector2(244, 536)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_k30e1")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(738, 306)
-
-[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("5_6mk6f")
-expand_mode = 4
-
-[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-texture = ExtResource("3_u5jvo")
-expand_mode = 5
-
-[node name="Jugar" type="Button" parent="Control"]
-layout_mode = 1
+[node name="Jugar" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,8 +51,7 @@ grow_vertical = 2
 text = "JUGAR
 "
 
-[node name="Objectius" type="Button" parent="Control"]
-layout_mode = 1
+[node name="Objectius" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -88,14 +64,13 @@ grow_vertical = 2
 text = "OBJECTIUS
 "
 
-[node name="Sortir" type="Button" parent="Control"]
-layout_mode = 0
+[node name="Sortir" type="Button" parent="."]
 offset_left = 14.0
 offset_top = 26.0
 offset_right = 78.0
 offset_bottom = 57.0
 text = "SORTIR"
 
-[connection signal="pressed" from="Control/Jugar" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/Objectius" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Control/Sortir" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Objectius" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Sortir" to="." method="_on_button_2_pressed"]

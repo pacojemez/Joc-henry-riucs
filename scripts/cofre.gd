@@ -30,7 +30,7 @@ func abrir():
 				cofre_a.play("stop")
 				$Sprite2D.visible = true
 				texto.visible = true
-				texto.text = "prem E per interactuar"
+				texto.text = "E per interactuar"
 				if not $"../../cofre_torch/sonidopillarobjeto".playing:
 					$"../../cofre_torch/sonidopillarobjeto".play()
 				$"../AnimationPlayer".play("grow")

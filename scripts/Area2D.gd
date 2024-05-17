@@ -18,7 +18,7 @@ func _on_body_entered(body):
 
 
 func _on_body_exited(body):
-	if body == $"../../Jugador principal":
+	if body == $"../../Jugador principal" and Global.player_has_key:
 		has_arrived = 0
 		$Label.text = ""
 func _physics_process(delta):
@@ -34,8 +34,6 @@ func _physics_process(delta):
 			if not $"../sonidoporta".playing:
 				$"../sonidoporta".play()
 			$"../AnimatedSprite2D".play("porta obrint")
-			$"../AnimatedSprite2D2".play("porta obrint")
 			if $"../AnimatedSprite2D".frame == 5:
 				$"../CollisionShape2D".queue_free()
-				$"../CollisionShape2D2".queue_free()
 				$".".queue_free()

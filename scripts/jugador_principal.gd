@@ -39,14 +39,12 @@ func movement(delta):
 		velocity.y = SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-		
+	if Input.is_action_pressed("dreta") and not Input.is_action_pressed("esquerra"):
+		velocity.x = SPEED
+	elif not Input.is_action_pressed("dreta") and Input.is_action_pressed("esquerra"):
+		velocity.x = -1 * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0,SPEED)
 	if velocity != Vector2(0,0):
 			movimiento_naranja = true
 	else:

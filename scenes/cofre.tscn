@@ -78,11 +78,11 @@ shape = SubResource("CircleShape2D_gg5ia")
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
 offset_left = -18.0
-offset_top = -22.0
-offset_right = 122.0
-offset_bottom = 20.0
+offset_top = -21.0
+offset_right = 126.0
+offset_bottom = 21.0
 scale = Vector2(0.25, 0.25)
-text = "Press E to open"
+text = "E per interactuar"
 editable = false
 context_menu_enabled = false
 shortcut_keys_enabled = false
