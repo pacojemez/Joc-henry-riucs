@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwwd6e71er4ie"]
+
+[ext_resource type="Texture2D" uid="uid://d0p2s8yjrx6xr" path="res://sprites/ignorar, tests roger/decoracion/dungeon0003.png" id="1_xkmqp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sa4r"]
+texture = ExtResource("1_xkmqp")
+margins = Vector2i(0, 26)
+texture_region_size = Vector2i(205, 205)
+17:31/0 = 0
+17:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:31/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-77.7818, -88.3884, 49.4975, -88.3884, 49.4975, -9.19239, -77.7818, -9.19239)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-77.7818, -88.3884, 49.4975, -88.3884, 49.4975, -9.19239, -77.7818, -9.19239)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68, -89, 62.2254, -88.3884, 60.8112, -12.0208, -65.0538, -12.0208)
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68, -89, 62.2254, -88.3884, 60.8112, -12.0208, -65.0538, -12.0208)
+
+[sub_resource type="TileSet" id="TileSet_un2hr"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_1sa4r")
+
+[node name="TileMap2" type="TileMap"]
+scale = Vector2(0.5, 0.5)
+tile_set = SubResource("TileSet_un2hr")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2228257, 131073, 2, -3342369, 131073, 2)
