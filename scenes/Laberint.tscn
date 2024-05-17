@@ -426,14 +426,6 @@ offset_bottom = 46.5
 scale = Vector2(0.2, 0.2)
 metadata/_edit_use_anchors_ = true
 
-[node name="sonidoporta" type="AudioStreamPlayer2D" parent="porta/Area2D"]
-position = Vector2(-352, -2.5)
-stream = ExtResource("7_8810e")
-
-[node name="ficarclau" type="AudioStreamPlayer2D" parent="porta/Area2D"]
-stream = ExtResource("8_67b6r")
-volume_db = 12.876
-
 [node name="Sprite2D" type="Sprite2D" parent="porta"]
 position = Vector2(-24, 1)
 rotation = 1.5708
@@ -447,6 +439,15 @@ scale = Vector2(0.6, 0.3)
 texture = ExtResource("11_fy4y6")
 region_enabled = true
 region_rect = Rect2(0, 0, 10, 7)
+
+[node name="sonidoporta" type="AudioStreamPlayer2D" parent="porta"]
+position = Vector2(-352, -8)
+stream = ExtResource("7_8810e")
+
+[node name="ficarclau" type="AudioStreamPlayer2D" parent="porta"]
+position = Vector2(0, -5.5)
+stream = ExtResource("8_67b6r")
+volume_db = 12.876
 
 [node name="cofre_key" type="Node2D" parent="."]
 position = Vector2(311, 232)
