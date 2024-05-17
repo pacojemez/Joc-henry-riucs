@@ -15,7 +15,7 @@ texture = ExtResource("1_kg7rf")
 
 [node name="CapturaEnhorabona-removebg-preview" type="Sprite2D" parent="."]
 position = Vector2(577, 188)
-scale = Vector2(1.86029, 1.49785)
+scale = Vector2(2, 2)
 texture = ExtResource("2_6uk85")
 
 [node name="GoldenApple" type="Sprite2D" parent="."]

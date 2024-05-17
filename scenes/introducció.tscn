@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://civtmx4jt5830"]
+[gd_scene load_steps=31 format=3 uid="uid://civtmx4jt5830"]
 
 [ext_resource type="Texture2D" uid="uid://cstmajlem5ysh" path="res://sprites/tilesets/plains.png" id="1_x7txq"]
 [ext_resource type="Texture2D" uid="uid://d4lqga6514x3m" path="res://sprites/tilesets/decor_8x8.png" id="2_voaeb"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="14_e7jd0"]
 [ext_resource type="Texture2D" uid="uid://dcwm283tavnjx" path="res://sprites/ignorar, tests roger/Mini RPG Asset Pack/Objects/Well.png" id="15_afit5"]
 [ext_resource type="PackedScene" uid="uid://bquctiabq407y" path="res://scenes/menu_joc.tscn" id="16_qk3w3"]
+[ext_resource type="Script" path="res://scripts/Cartell.gd" id="18_0o1r1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dt2uo"]
 texture = ExtResource("2_voaeb")
@@ -489,6 +490,9 @@ size = Vector2(7, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_0mdsr"]
 radius = 20.025
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffand"]
+radius = 50.6063
+
 [node name="Introducció" type="Node2D"]
 position = Vector2(660, 256)
 
@@ -710,7 +714,7 @@ texture = ExtResource("9_t7c63")
 wait_time = 2.34
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
-position = Vector2(-75, 51)
+position = Vector2(-172, 55)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
 
@@ -737,5 +741,23 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(472, 150)
 scale = Vector2(0.2, 0.2)
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-57, 23)
+script = ExtResource("18_0o1r1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_ffand")
+
+[node name="TextEdit" type="TextEdit" parent="Area2D2"]
+visible = false
+offset_left = -39.0
+offset_top = -14.0
+offset_right = 241.0
+offset_bottom = 23.0
+scale = Vector2(0.3, 0.3)
+text = "Recull les pedres, les necessitaras!"
+
 [connection signal="finished" from="musica_intro" to="musica_intro" method="_on_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://3gia37m3v205" path="res://sprites/sprites menu/Negro.jpg" id="1_6rrgt"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_kl066"]
-[ext_resource type="Texture2D" uid="uid://ce71wikdd8b35" path="res://sprites/sprites menu/game over.png" id="2_k0qkj"]
 [ext_resource type="Texture2D" uid="uid://qrxkhqe7mww2" path="res://sprites/sprites menu/Calavera_animada_png.png" id="3_h7i7h"]
 [ext_resource type="AudioStream" uid="uid://c05ygfy1srh6s" path="res://sons/derrota.mp3" id="5_llnxd"]
+[ext_resource type="Texture2D" uid="uid://buqvmlw4lvisg" path="res://sprites/Captura_de_has_perdut_en_vermell-removebg-preview.png" id="5_nm1be"]
 
 [node name="Game over" type="Node"]
 script = ExtResource("1_kl066")
@@ -13,10 +13,6 @@ script = ExtResource("1_kl066")
 position = Vector2(705, 376)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("1_6rrgt")
-
-[node name="TextAppleGame" type="Sprite2D" parent="."]
-position = Vector2(565, 121)
-texture = ExtResource("2_k0qkj")
 
 [node name="ArrowKeys-300x205" type="Sprite2D" parent="."]
 position = Vector2(560, 358)
@@ -28,7 +24,7 @@ offset_left = 468.0
 offset_top = 500.0
 offset_right = 660.0
 offset_bottom = 591.0
-text = "PLAY AGAIN"
+text = "TORNAR A JUGAR"
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -37,5 +33,10 @@ position = Vector2(575, 326)
 [node name="mort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_llnxd")
 autoplay = true
+
+[node name="CapturaDeHasPerdutEnVermell-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(633, 128)
+scale = Vector2(4, 4)
+texture = ExtResource("5_nm1be")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

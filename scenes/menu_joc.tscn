@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bquctiabq407y"]
 
 [ext_resource type="Script" path="res://scripts/MenuJoc.gd" id="1_5r5qq"]
-[ext_resource type="Texture2D" uid="uid://cmclyclhasw6t" path="res://sprites/sprites menu/Game paused.png" id="2_cl88n"]
+[ext_resource type="Texture2D" uid="uid://cvan6lmc0lk26" path="res://sprites/Captura_de_PAUSA-removebg-preview.png" id="2_p3i0n"]
 
 [node name="MenuJoc" type="CanvasLayer"]
 process_mode = 3
@@ -14,18 +14,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="GamePaused2" type="Sprite2D" parent="."]
-position = Vector2(613, 63)
-scale = Vector2(1.69, 1.69)
-texture = ExtResource("2_cl88n")
-
 [node name="Surt" type="Button" parent="."]
 offset_left = 656.0
 offset_top = 440.0
 offset_right = 840.0
 offset_bottom = 532.0
 scale = Vector2(2, 2)
-text = "EXIT"
+text = "SORTIR"
 metadata/_edit_use_anchors_ = true
 
 [node name="Continua" type="Button" parent="."]
@@ -34,8 +29,13 @@ offset_top = 440.0
 offset_right = 346.0
 offset_bottom = 532.0
 scale = Vector2(2, 2)
-text = "CONTINUE"
+text = "CONTINUAR"
 metadata/_edit_use_anchors_ = true
+
+[node name="CapturaDePausa-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(584, 232)
+scale = Vector2(4, 4)
+texture = ExtResource("2_p3i0n")
 
 [connection signal="pressed" from="Surt" to="." method="_on_surt_pressed"]
 [connection signal="pressed" from="Continua" to="." method="_on_continua_pressed"]
