@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca2t6sulq8kjb"]
+
+[ext_resource type="Script" path="res://scenes/PANTALLA FINAL.gd" id="1_dhg5f"]
+[ext_resource type="Texture2D" uid="uid://p8se5k3opsfl" path="res://sprites/PANTALLA VICOTRIA.jpg" id="1_kg7rf"]
+[ext_resource type="Texture2D" uid="uid://ddbkirq02f08r" path="res://sprites/Captura_enhorabona-removebg-preview.png" id="2_6uk85"]
+[ext_resource type="Texture2D" uid="uid://nvpuqp0aki74" path="res://sprites/objects/golden_apple.png" id="3_4qv2w"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_dhg5f")
+
+[node name="PantallaVicotria" type="Sprite2D" parent="."]
+position = Vector2(572, 320)
+scale = Vector2(2.52381, 2.53077)
+texture = ExtResource("1_kg7rf")
+
+[node name="CapturaEnhorabona-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(577, 188)
+scale = Vector2(1.86029, 1.49785)
+texture = ExtResource("2_6uk85")
+
+[node name="GoldenApple" type="Sprite2D" parent="."]
+position = Vector2(577, 337)
+scale = Vector2(0.616, 0.6002)
+texture = ExtResource("3_4qv2w")
+
+[node name="Surt" type="Button" parent="."]
+offset_left = 394.0
+offset_top = 454.0
+offset_right = 578.0
+offset_bottom = 546.0
+scale = Vector2(2, 2)
+text = "SORTIR"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Surt" to="." method="_on_surt_pressed"]
