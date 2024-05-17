@@ -713,11 +713,6 @@ texture = ExtResource("9_t7c63")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.34
 
-[node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
-position = Vector2(-172, 55)
-
-[node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
-
 [node name="Well" type="Sprite2D" parent="."]
 position = Vector2(-320, 124)
 texture = ExtResource("15_afit5")
@@ -755,6 +750,11 @@ offset_right = 134.0
 offset_bottom = 26.0
 scale = Vector2(0.3, 0.3)
 text = "Recull les pedres!"
+
+[node name="Jugador principal" parent="." instance=ExtResource("5_ersag")]
+position = Vector2(-187, 35)
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]
 
 [connection signal="finished" from="musica_intro" to="musica_intro" method="_on_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
