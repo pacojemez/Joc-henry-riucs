@@ -6,8 +6,8 @@ func _physics_process(delta):
 		if timer <= 0:
 			if not $"../sonidoporta".playing:
 				$"../sonidoporta".play()
-			$"../LightOccluder2D".queue_free()
+			
 			$"../AnimatedSprite2D".play("porta obrint")
 			if $"../AnimatedSprite2D".frame == 5:
-				
+				$"../LightOccluder2D".queue_free()
 				queue_free()
