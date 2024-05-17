@@ -100,11 +100,10 @@ func animations():
 		if velocity.y < 0 and velocity.x < 0:
 			animacio.play("run_side")
 			animacio.flip_h = true
-	if got_hit:
-		$AnimationPlayer2.play("hit")
-		got_hit = false
-	
-	if Global.player_health == 0:
+		if got_hit:
+			$AnimationPlayer2.play("hit")
+			got_hit = false
+	if Global.player_health <= 0:
 		anim.frame = 0
 		animacio.play("die")
 		if animacio.frame == 3:

@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://scripts/escales.gd" id="14_bvse1"]
 [ext_resource type="Script" path="res://scripts/musica_laberint.gd" id="15_vhnyr"]
 [ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="19_0xpwt"]
-[ext_resource type="PackedScene" uid="uid://bptmhvwevsws2" path="res://scenes/tile_map decoració.tscn" id="20_wpb3a"]
+[ext_resource type="PackedScene" path="res://scenes/tile_map decoració.tscn" id="20_wpb3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyhm4"]
 atlas = ExtResource("10_fvxj1")
@@ -350,7 +350,7 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njtsi"]
 size = Vector2(80, 46)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2(186, 305)
 
 [node name="tilemap terra" parent="." instance=ExtResource("1_55egh")]

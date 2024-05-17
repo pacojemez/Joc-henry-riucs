@@ -1,8 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://cehed8skdp6j3"]
+[gd_scene load_steps=49 format=3 uid="uid://cehed8skdp6j3"]
 
 [ext_resource type="Script" path="res://scripts/zorro.gd" id="1_8njnb"]
 [ext_resource type="Texture2D" uid="uid://ddgo8gl7eltwn" path="res://sprites/characters/zorro.png" id="1_lr708"]
 [ext_resource type="Texture2D" uid="uid://c1rfxj0u4w08k" path="res://sprites/characters/zorro/vida.png" id="3_771ob"]
+[ext_resource type="Texture2D" uid="uid://bxn6x33530i5l" path="res://sprites/characters/zorro/zorro.png" id="3_n08b8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5pb6"]
 atlas = ExtResource("1_lr708")
@@ -19,6 +20,10 @@ region = Rect2(34, 96, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_383si"]
 atlas = ExtResource("1_lr708")
 region = Rect2(66, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4w3v"]
+atlas = ExtResource("3_n08b8")
+region = Rect2(0, 64, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84nmp"]
 atlas = ExtResource("1_lr708")
@@ -50,6 +55,30 @@ region = Rect2(0, 128, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjga6"]
 atlas = ExtResource("1_lr708")
+region = Rect2(33, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqgkr"]
+atlas = ExtResource("3_n08b8")
+region = Rect2(0, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv5r3"]
+atlas = ExtResource("3_n08b8")
+region = Rect2(33, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1blw"]
+atlas = ExtResource("3_n08b8")
+region = Rect2(0, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4o6g"]
+atlas = ExtResource("3_n08b8")
+region = Rect2(33, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro4ia"]
+atlas = ExtResource("3_n08b8")
+region = Rect2(0, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_635ei"]
+atlas = ExtResource("3_n08b8")
 region = Rect2(33, 128, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6uge"]
@@ -113,6 +142,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_n4w3v")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_84nmp")
 }, {
 "duration": 1.0,
@@ -145,8 +182,26 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gjga6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqgkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv5r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1blw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4o6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro4ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635ei")
 }],
-"loop": true,
+"loop": false,
 "name": &"oh_dios",
 "speed": 8.0
 }, {
@@ -197,13 +252,6 @@ radius = 46.0435
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g5pi"]
 size = Vector2(15, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wnwo"]
-size = Vector2(21, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3dk3p"]
-atlas = ExtResource("3_771ob")
-region = Rect2(384, 192, 192, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ec77"]
 atlas = ExtResource("3_771ob")
 region = Rect2(192, 192, 192, 64)
@@ -252,9 +300,6 @@ region = Rect2(0, 0, 192, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3dk3p")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_0ec77")
 }, {
 "duration": 1.0,
@@ -297,9 +342,8 @@ script = ExtResource("1_8njnb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lg5c3")
-animation = &"idle"
+animation = &"oh_dios"
 autoplay = "idle"
-frame_progress = 0.515018
 
 [node name="Area deteccion" type="Area2D" parent="."]
 
@@ -312,28 +356,19 @@ visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_3g5pi")
 
-[node name="Area daño" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area daño"]
-visible = false
-position = Vector2(-1.5, 4)
-shape = SubResource("RectangleShape2D_3wnwo")
-
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.96046e-08, -15)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_5jt35")
+frame_progress = 0.717817
 
 [node name="Critical" type="Label" parent="."]
-offset_left = 6.0
-offset_top = -25.0
-offset_right = 105.0
-offset_bottom = -2.0
-rotation = 0.523599
+offset_left = -3.0
+offset_top = -35.0
+offset_right = 96.0
+offset_bottom = -12.0
 scale = Vector2(0.2, 0.2)
 text = "CRITICAL HIT"
 
 [connection signal="body_entered" from="Area deteccion" to="." method="_body_entered"]
 [connection signal="body_exited" from="Area deteccion" to="." method="_body_exited"]
-[connection signal="body_entered" from="Area daño" to="." method="_body_entered_daño"]
-[connection signal="body_exited" from="Area daño" to="." method="_body_exited_daño"]
