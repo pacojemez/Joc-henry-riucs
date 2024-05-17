@@ -94,7 +94,7 @@ offset_top = -130.0
 offset_right = -24.9999
 offset_bottom = -107.0
 scale = Vector2(3, 3)
-text = "press E"
+text = "prem E per interactuar"
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

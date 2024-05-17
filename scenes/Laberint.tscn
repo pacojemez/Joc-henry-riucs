@@ -490,7 +490,7 @@ script = ExtResource("15_vhnyr")
 
 [node name="Jugador principal" parent="." instance=ExtResource("3_vexgt")]
 z_index = 1
-position = Vector2(60, 297)
+position = Vector2(337, 246)
 scale = Vector2(1, 0.857143)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]

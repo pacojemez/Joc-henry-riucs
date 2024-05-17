@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca2t6sulq8kjb"]
 
-[ext_resource type="Script" path="res://scenes/PANTALLA FINAL.gd" id="1_dhg5f"]
+[ext_resource type="Script" path="res://scripts/PANTALLA FINAL.gd" id="1_dhg5f"]
 [ext_resource type="Texture2D" uid="uid://p8se5k3opsfl" path="res://sprites/PANTALLA VICOTRIA.jpg" id="1_kg7rf"]
 [ext_resource type="Texture2D" uid="uid://ddbkirq02f08r" path="res://sprites/Captura_enhorabona-removebg-preview.png" id="2_6uk85"]
 [ext_resource type="Texture2D" uid="uid://nvpuqp0aki74" path="res://sprites/objects/golden_apple.png" id="3_4qv2w"]

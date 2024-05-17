@@ -11,6 +11,7 @@ func _physics_process(delta):
 		$"../../Jugador principal".object = $".."
 		$"../AnimatedSprite2D".visible = false
 		texto.visible = false
+		$Area2D.queue_free()
 func _on_area_2d_body_entered(body):
 	ch_in = true 
 	texto.visible = true
@@ -29,9 +30,8 @@ func abrir():
 				cofre_a.play("stop")
 				$Sprite2D.visible = true
 				texto.visible = true
-				texto.text = "press E to collect"
+				texto.text = "prem E per interactuar"
 				if not $"../../cofre_torch/sonidopillarobjeto".playing:
 					$"../../cofre_torch/sonidopillarobjeto".play()
 				$"../AnimationPlayer".play("grow")
 				opened = 2
-
