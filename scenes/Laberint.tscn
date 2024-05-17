@@ -338,12 +338,12 @@ _data = {
 "grow": SubResource("Animation_x2jbx")
 }
 
-[sub_resource type="Gradient" id="Gradient_tr22y"]
+[sub_resource type="Gradient" id="Gradient_piytp"]
 offsets = PackedFloat32Array(0.0519481, 0.668831)
 colors = PackedColorArray(0.703808, 0.703808, 0.703808, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_17kym"]
-gradient = SubResource("Gradient_tr22y")
+gradient = SubResource("Gradient_piytp")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 

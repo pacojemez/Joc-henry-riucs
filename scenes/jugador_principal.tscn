@@ -685,7 +685,7 @@ offset_top = -24.0
 offset_right = 104.0
 offset_bottom = -1.0
 scale = Vector2(0.3, 0.3)
-text = "You don't have rocks!"
+text = "No tens pedres!"
 
 [node name="passos" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_5k5ix")

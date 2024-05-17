@@ -1,7 +1,7 @@
 extends Node
-var player_has_key = true
-var player_has_torch = true
-var player_stones = 30
+var player_has_key = false
+var player_has_torch = false
+var player_stones = 0
 var player_health = 5
 var zorro_dead = false
 # Called when the node enters the scene tree for the first time.

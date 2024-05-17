@@ -14,8 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == $"../../Jugador principal":
-		if Global.player_has_key == true:
-			has_arrived = 1
+		has_arrived = 1
 
 
 func _on_body_exited(body):
@@ -24,7 +23,7 @@ func _on_body_exited(body):
 		$Label.text = ""
 func _physics_process(delta):
 	if has_arrived == 1:
-		$Label.text = "press E"
+		$Label.text = "E per obrir"
 		if Input.is_action_just_pressed("e"):
 			if not $"../ficarclau".playing:
 				$"../ficarclau".play()
@@ -35,6 +34,8 @@ func _physics_process(delta):
 			if not $"../sonidoporta".playing:
 				$"../sonidoporta".play()
 			$"../AnimatedSprite2D".play("porta obrint")
+			$"../AnimatedSprite2D2".play("porta obrint")
 			if $"../AnimatedSprite2D".frame == 5:
 				$"../CollisionShape2D".queue_free()
+				$"../CollisionShape2D2".queue_free()
 				$".".queue_free()

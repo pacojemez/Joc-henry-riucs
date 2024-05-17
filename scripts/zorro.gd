@@ -19,7 +19,7 @@ var able_to_attack = true
 var walking = true
 var ataque = false
 var ch_in = false
-var vida = 1
+var vida = 10
 var temps_critical = 10
 var temps_d_ataque = 3
 func _physics_process(delta):
