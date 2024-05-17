@@ -46,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(738, 306)
 
 [node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
@@ -59,18 +60,42 @@ size_flags_horizontal = 8
 texture = ExtResource("3_u5jvo")
 expand_mode = 5
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Jugar" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 489.0
-offset_top = 372.0
-offset_right = -438.0
-offset_bottom = -94.0
+offset_left = 499.0
+offset_top = 298.0
+offset_right = -466.0
+offset_bottom = -256.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "JUGAR
 "
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[node name="Objectius" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 499.0
+offset_top = 418.0
+offset_right = -466.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OBJECTIUS
+"
+
+[node name="Sortir" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 26.0
+offset_right = 78.0
+offset_bottom = 57.0
+text = "SORITR"
+
+[connection signal="pressed" from="Control/Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Objectius" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/Sortir" to="." method="_on_button_2_pressed"]

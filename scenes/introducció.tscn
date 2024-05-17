@@ -749,13 +749,12 @@ script = ExtResource("18_0o1r1")
 shape = SubResource("CircleShape2D_ffand")
 
 [node name="TextEdit" type="TextEdit" parent="Area2D2"]
-visible = false
-offset_left = -39.0
+offset_left = -19.0
 offset_top = -14.0
-offset_right = 241.0
-offset_bottom = 23.0
+offset_right = 134.0
+offset_bottom = 26.0
 scale = Vector2(0.3, 0.3)
-text = "Recull les pedres, les necessitaras!"
+text = "Recull les pedres!"
 
 [connection signal="finished" from="musica_intro" to="musica_intro" method="_on_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

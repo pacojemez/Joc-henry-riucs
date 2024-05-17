@@ -88,12 +88,11 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_5rurf")
 
 [node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -79.9999
-offset_top = -130.0
-offset_right = -24.9999
-offset_bottom = -107.0
-scale = Vector2(3, 3)
+offset_left = -130.0
+offset_top = -100.0
+offset_right = 46.0
+offset_bottom = -77.0
+scale = Vector2(1.5, 1.5)
 text = "prem E per interactuar"
 metadata/_edit_use_anchors_ = true
 
