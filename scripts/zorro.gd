@@ -27,6 +27,7 @@ func _physics_process(delta):
 		temps_critical -= delta
 		if temps_critical <= 0:
 			$Critical.visible = false
+			temps_critical = 1
 	var prev_pos = pivot_ataque.global_position
 	if not charging:
 		animations()
@@ -75,28 +76,28 @@ func animations():
 			animacio_zorro.play("walk")
 			animacio_zorro.flip_h = true
 		$AnimatedSprite2D2.frame = vida
-	func atacar(delta):
-		if character_in and able_to_attack:
-			charging = true
-		if attack_time < 0 and able_to_attack:
-			pivot_area.visible = false
-			pivot_ataque.visible = true
-			animation.play("aparecer ataque")
-			charging = false
-			attack_time = 1
-			if $"../../../zona ataque/ataque/6".scale.y >0.09:
-				Global.player_health -= 2
-				animation.pause()
-				cooldown = 3
-				able_to_attack = false
-		if charging and able_to_attack:
-			if attack_time > 0.5:
-				position_character = $"../../../Jugador principal".global_position
-				pivot_area.visible = true
-				pivot_atk.look_at(position_character)
-			attack_time-=delta
-			path.go = false
-			animacio_zorro.play("cargando_ataque")
+func atacar(delta):
+	if character_in and able_to_attack:
+		charging = true
+	if attack_time < 0 and able_to_attack:
+		pivot_area.visible = false
+		pivot_ataque.visible = true
+		animation.play("aparecer ataque")
+		charging = false
+		attack_time = 1
+		if $"../../../zona ataque/ataque/6".scale.y >0.09:
+			Global.player_health -= 2
+			animation.pause()
+			cooldown = 5
+			able_to_attack = false
+	if charging and able_to_attack:
+		if attack_time > 0.5:
+			position_character = $"../../../Jugador principal".global_position
+			pivot_area.visible = true
+			pivot_atk.look_at(position_character)
+		attack_time-=delta
+		path.go = false
+		animacio_zorro.play("cargando_ataque")
 		
 func _body_entered(body):
 	if body == $"../../../Jugador principal":

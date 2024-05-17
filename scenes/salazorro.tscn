@@ -317,49 +317,49 @@ position = Vector2(-5, 1)
 polygon = PackedVector2Array(70, -30, 70, 30, 0, 0)
 
 [node name="1" type="Sprite2D" parent="zona ataque/ataque"]
-position = Vector2(23, -2.91271e-06)
+position = Vector2(5.4, -2.14339e-06)
 rotation = -1.5708
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1, -0.0002849)
 texture = ExtResource("3_7snid")
 region_enabled = true
 region_rect = Rect2(32, 19, 137, 351)
 
 [node name="4" type="Sprite2D" parent="zona ataque/ataque"]
-position = Vector2(53.405, -3)
+position = Vector2(35.805, -3.01206)
 rotation = 1.57148
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1, -0.0002849)
 texture = ExtResource("3_7snid")
 region_enabled = true
 region_rect = Rect2(32, 19, 137, 351)
 
 [node name="2" type="Sprite2D" parent="zona ataque/ataque"]
-position = Vector2(20, 13)
+position = Vector2(3.46141, 6.98044)
 rotation = -1.22173
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1, -0.0002849)
 texture = ExtResource("3_7snid")
 region_enabled = true
 region_rect = Rect2(32, 19, 137, 351)
 
 [node name="5" type="Sprite2D" parent="zona ataque/ataque"]
-position = Vector2(49, 24)
+position = Vector2(32.4614, 17.9804)
 rotation = -1.22173
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1, -0.0002849)
 texture = ExtResource("3_7snid")
 region_enabled = true
 region_rect = Rect2(32, 19, 137, 351)
 
 [node name="3" type="Sprite2D" parent="zona ataque/ataque"]
-position = Vector2(21, -12)
+position = Vector2(4.46141, -5.98044)
 rotation = -1.91986
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1, -0.0002849)
 texture = ExtResource("3_7snid")
 region_enabled = true
 region_rect = Rect2(32, 19, 137, 351)
 
 [node name="6" type="Sprite2D" parent="zona ataque/ataque"]
-position = Vector2(51, -22)
+position = Vector2(34.4625, -15.9808)
 rotation = -1.91986
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1, -0.000278191)
 texture = ExtResource("3_7snid")
 region_enabled = true
 region_rect = Rect2(32, 19, 137, 351)
@@ -443,7 +443,7 @@ stream = ExtResource("13_eisyv")
 stream = ExtResource("14_af4xe")
 
 [node name="Jugador principal" parent="." instance=ExtResource("5_s5cau")]
-position = Vector2(108, 236.5)
+position = Vector2(109.5, 91.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador principal"]

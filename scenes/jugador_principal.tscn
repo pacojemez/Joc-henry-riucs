@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://opeli7m0jmlu"]
+[gd_scene load_steps=79 format=3 uid="uid://opeli7m0jmlu"]
 
 [ext_resource type="Texture2D" uid="uid://c88hm06lyns5k" path="res://sprites/characters/player.png" id="1_3mwqv"]
 [ext_resource type="Script" path="res://scripts/jugador_principal.gd" id="1_h868m"]
@@ -536,6 +536,12 @@ polygon = PackedVector2Array(336.286, -270.623, 334.527, -275.303, 339.207, -277
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_07jbh"]
 polygon = PackedVector2Array(-8, 6, -8, 8, -10, 8, -10, 10, -12, 10, -12, 12, -10, 12, -10, 14, -8, 14, -8, 16, 52, 16, 52, 14, 54, 14, 54, 12, 56, 12, 56, 10, 54, 10, 54, 8, 52, 8, 52, 6)
 
+[sub_resource type="Gradient" id="Gradient_2op7d"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uyvwj"]
+gradient = SubResource("Gradient_2op7d")
+fill_to = Vector2(0.00458716, 0)
+
 [node name="Jugador principal" type="CharacterBody2D"]
 collision_layer = 7
 collision_mask = 7
@@ -639,6 +645,8 @@ scale = Vector2(0.3, 0.3)
 text = "1"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Control/HBoxContainer"]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(-115, 100)
 rotation = 0.359538
 scale = Vector2(0.4, 0.4)
@@ -646,8 +654,28 @@ occluder = SubResource("OccluderPolygon2D_qbh33")
 occluder_light_mask = 2
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Control/HBoxContainer"]
+light_mask = 2
+visibility_layer = 2
 occluder = SubResource("OccluderPolygon2D_07jbh")
 occluder_light_mask = 2
+
+[node name="PointLight2D2" type="PointLight2D" parent="Control/HBoxContainer"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(24.4998, 33.4166)
+scale = Vector2(1.23437, 0.528646)
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_uyvwj")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Control/HBoxContainer"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(25.4998, 8.91669)
+scale = Vector2(1.23437, 0.528646)
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_uyvwj")
 
 [node name="Label" type="Label" parent="Control"]
 visible = false
