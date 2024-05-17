@@ -5,14 +5,29 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sa4r"]
 texture = ExtResource("1_xkmqp")
 margins = Vector2i(0, 26)
-texture_region_size = Vector2i(202, 206)
+texture_region_size = Vector2i(205, 205)
 17:31/0 = 0
+17:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+17:31/0/physics_layer_0/angular_velocity = 0.0
 3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-77.7818, -88.3884, 49.4975, -88.3884, 49.4975, -9.19239, -77.7818, -9.19239)
 2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-77.7818, -88.3884, 49.4975, -88.3884, 49.4975, -9.19239, -77.7818, -9.19239)
 4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68, -89, 62.2254, -88.3884, 60.8112, -12.0208, -65.0538, -12.0208)
 5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68, -89, 62.2254, -88.3884, 60.8112, -12.0208, -65.0538, -12.0208)
 
 [sub_resource type="TileSet" id="TileSet_un2hr"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_1sa4r")
 
 [node name="TileMap" type="TileMap"]
