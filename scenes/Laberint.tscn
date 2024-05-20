@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://scripts/escales.gd" id="14_bvse1"]
 [ext_resource type="Script" path="res://scripts/musica_laberint.gd" id="15_vhnyr"]
 [ext_resource type="PackedScene" uid="uid://c276qayw6bbum" path="res://scenes/pedra_tiraxinas.tscn" id="19_0xpwt"]
-[ext_resource type="PackedScene" path="res://scenes/tile_map decoració.tscn" id="20_wpb3a"]
+[ext_resource type="PackedScene" uid="uid://bptmhvwevsws2" path="res://scenes/tile_map decoració.tscn" id="20_wpb3a"]
 [ext_resource type="Texture2D" uid="uid://lr7akjq5p585" path="res://sprites/sprites menu/mouse-left-button.svg" id="21_whys0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyhm4"]
