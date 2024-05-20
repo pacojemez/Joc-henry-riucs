@@ -526,10 +526,10 @@ position = Vector2(22, 24.5)
 shape = SubResource("RectangleShape2D_eg0y6")
 
 [node name="Label" type="Label" parent="porta/Area2D"]
-offset_left = 5.0
-offset_top = 1.5
-offset_right = 86.0
-offset_bottom = 34.5
+offset_left = 2.0
+offset_top = 40.5
+offset_right = 83.0
+offset_bottom = 73.5
 scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 

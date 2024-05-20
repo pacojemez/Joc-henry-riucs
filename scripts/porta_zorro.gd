@@ -23,7 +23,7 @@ func _on_body_exited(body):
 		$Label.text = ""
 func _physics_process(delta):
 	if has_arrived == 1:
-		$Label.text = "press E"
+		$Label.text = "presiona E"
 		if Input.is_action_just_pressed("e"):
 			if not $"../ficarclau".playing:
 				$"../ficarclau".play()
