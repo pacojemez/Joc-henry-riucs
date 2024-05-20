@@ -20,17 +20,11 @@ var walking = true
 var ataque = false
 var ch_in = false
 var vida = 10
-var temps_critical = 10
 var temps_d_ataque = 3
 func _physics_process(delta):
 	$AnimatedSprite2D2.frame = vida
 	$"..".go = false
 	calc_velocitat()
-	if $Critical.visible == true:
-		temps_critical -= delta
-		if temps_critical <= 0:
-			$Critical.visible = false
-			temps_critical = 100
 	var prev_pos = pivot_ataque.global_position
 	if not charging and vida > 0:
 		animations()
@@ -81,6 +75,7 @@ func animations_dead():
 	if not animacio_zorro.animation == "dead":
 		$AnimatedSprite2D2.visible = false
 		$Critical.visible = false
+		pivot_atk.visible = false
 		animacio_zorro.animation = "oh_dios"
 	if animacio_zorro.frame == 3:
 		animacio_zorro.animation = "dead"

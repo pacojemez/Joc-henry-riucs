@@ -363,6 +363,7 @@ sprite_frames = SubResource("SpriteFrames_5jt35")
 frame_progress = 0.717817
 
 [node name="Critical" type="Label" parent="."]
+visible = false
 offset_left = -3.0
 offset_top = -35.0
 offset_right = 96.0
